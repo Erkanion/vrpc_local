@@ -1,0 +1,398 @@
+<?php
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.2.4 or newer
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014, British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package	CodeIgniter
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license	http://opensource.org/licenses/MIT	MIT License
+ * @link	http://codeigniter.com
+ * @since	Version 1.0.0
+ * @filesource
+ */
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+?>
+
+<!-- filter cnaf -->
+           <div class="tab-pane" id="cruces_fronterizos">
+
+
+				<div class="row list_tours_tabs">
+                        	<div class="col-md-12 col-sm-12">
+                            <h3>Cruces <span>fronterizos</span></h3>
+							<ul>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>OPERBES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21519</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>SOUTHERN CABLE NETWORK LTD.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21519.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>OPERBES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21520</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>GAS NATURAL FENOSA TELECOMUNICACIONES GUATEMALA, S.A. NAVEGA.COM, S.A.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21520.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21521</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>AGENCIA ADUANAL JORGE DÍAZ, S.C.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21521.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>XC NETWORKS, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21522</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>
+                           	    	<table>
+                                            <tr><td>XC NETWORKS, S.A. DE C.V.</td></tr>
+                                            <tr><td>INSTITUTO TECNOLÓGICO DE CIUDAD ACUÑA</td></tr>
+                           	    	</table></strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21522.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21523</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>MODINE TRANSFERENCIA DE CALOR, S.A. DE C.V.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21523.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21524</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>AGENCIA ADUANAL RODRÍGUEZ Y CIA, S.C.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21524.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>XC NETWORKS, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21525</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>
+                           	    	<table>
+                           	    		<tr><td>JAROPAMEX, S.A. DE C.V.</td></tr>
+                           	    		<tr><td>TAKATA SEATBELTS</td></tr>
+                           	    		<tr><td>RASSINI SUSPENSIONES, S.A. DE C.V.</td></tr>
+                           	    		<tr><td>CONDUCTORES TECNOLÓGICOS DE JUÁREZ, S.A. DE C.V.</td></tr>
+                           	    	</table></strong>
+                           	    	</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21525.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>XC NETWORKS, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21526</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>
+                           	    	<table>
+                           	    		<tr><td>AMETEK LAMB MOTORES DE MÉXICO, S.A. DE C.V.</td></tr>
+                           	    		<tr><td>ELASTOMEROS TÉCNICOS MOLDEADOS, S. DE R.L. DE C.V.</td></tr>
+                           	    		<tr><td>FABRICAS ELENA, S. DE R.L. DE C.V.</td></tr>
+                           	    		<tr><td>EDM, S. DE R.L. DE C.V.</td></tr>
+                           	    	</table></strong>
+                           	    	</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21526.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21527</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>GLOBAL PCNET, S.A. DE C.V.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21527.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>XC NETWORKS, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21528</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>XC NETWORKS, S.A. DE C.V.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21528.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>GLOBAL EXCHANGE TELECOM, S.A.P.I. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21529</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>TECHNOLOGY COMMUNICATIONS, LLC.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21529.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>MARCATEL COM, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21530</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>MARCATEL TELECOMMUNICATIONS, LLC.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21530.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21531</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>COORDINADORA DE SERVICIOS ADUANALES ATLAS, S.C.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21531.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21532</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>MODINE TRANSFERENCIA DE CALOR, S.A. DE C.V.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21532.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21533</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>PRODUCTOS MEDLINE, S.A. DE C.V.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21533.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21534</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>REDES Y ASESORÍAS 7R, S. DE R.L. DE C.V.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21534.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>21535</strong>
+                           	    <br/>Fecha de inscripción: <strong>09/11/2017</strong>
+                           	    <br/>Usuario final: <strong>FURUKAWA MÉXICO, S.A. DE C.V.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>21535.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>
+                                <!-- 2018 -->  
+                                 <li><div>
+                           	    <h3>Autorizado: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>23166</strong>
+                           	    <br/>Fecha de inscripción: <strong>11/01/2018</strong>
+                           	    <br/>Usuario final: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>23166.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>  
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>GRUPO DE TELECOMUNICACIONES MEXICANAS, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>23167</strong>
+                           	    <br/>Fecha de inscripción: <strong>11/01/2018</strong>
+                           	    <br/>Usuario final: <strong>TRANSTELCO, INC.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>23167.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>  
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>OPERBES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>23168</strong>
+                           	    <br/>Fecha de inscripción: <strong>11/01/2018</strong>
+                           	    <br/>Usuario final: <strong>BENDIX CVS DE MÉXICO, S.A. DE C.V.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>23168.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>  
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>DOMOS TELECOMUNICACIONES, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>23715</strong>
+                           	    <br/>Fecha de inscripción: <strong>07/02/2018</strong>
+                           	    <br/>Usuario final: <strong>GRUPO DEKKO MÉXICO, S.A. DE C.V.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>23715.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>  
+                                
+                                
+                              <!-- 2019 -->        
+                                <li><div>
+                           	    <h3>Autorizado: <strong>UFINET MÉXICO, S. DE R.L. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>32729</strong>
+                           	    <br/>Fecha de inscripción: <strong>14/02/2019</strong>
+                           	    <br/>Usuario final: <strong>UFINET, GUATEMALA, S.A.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>32729.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>  
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>AIRFASTER, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>34567</strong>
+                           	    <br/>Fecha de inscripción: <strong>17/05/2019</strong>
+                           	    <br/>Usuario final: <strong>AIRFASTER, S.A. DE C.V. (USA)</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>34567.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>      
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>SERVICE TRENDS, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>34568</strong>
+                           	    <br/>Fecha de inscripción: <strong>17/05/2019</strong>
+                           	    <br/>Usuario final: <strong>SERVICE TRENDS, S.A. DE C.V. (USA)</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>34568.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>        
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>XC NETWORKS, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>34569</strong>
+                           	    <br/>Fecha de inscripción: <strong>17/05/2019</strong>
+                           	    <br/>Usuario final: <strong>
+                           	    	<table>
+                                            <tr><td>EQUIPOS DE ACUÑA, S.A. DE C.V.</td></tr>
+                                            <tr><td>TRANSTELCO INC.</td></tr>
+                           	    	</table></strong>
+                                        <br/><strong><a href="<?php echo URLASSETSCRUCES?>34569.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>   
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>XC NETWORKS, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>34742</strong>
+                           	    <br/>Fecha de inscripción: <strong>17/05/2019</strong>
+                           	    <br/>Usuario final: <strong>
+                                    <table>
+                                            <tr><td>AFX INDUSTRIES, S.A. DE C.V.</td></tr>
+                                            <tr><td>TRANSTELCO INC.</td></tr>
+                           	    	</table></strong>
+                                    
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>34742.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>                                                                
+                                
+                                
+                              <!-- filter cnaf -->  
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>NEUTRAL NETWORKS, S. DE R.L. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>35510</strong>
+                           	    <br/>Fecha de inscripción: <strong>24/06/2019</strong>
+                           	    <br/>Usuario final: <strong>NEUTRAL NETWORKS USA, INC.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>35510.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>                                
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>BT LATAM MÉXICO, S.A. DE C.V. </strong></h3>
+                           	    <br/>Folio de inscripción: <strong>36814</strong>
+                           	    <br/>Fecha de inscripción: <strong>19/08/2019</strong>
+                           	    <br/>Usuario final: <strong>BT AMERICAS INC.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>36814.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>      
+                                <!-- JBRH 27052020 -->
+                                <li><div>
+                           	    <h3>Autorizado: <strong>MEGA CABLE, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>37241</strong>
+                           	    <br/>Fecha de inscripción: <strong>06/09/2019</strong>
+                           	    <br/>Usuario final: <strong>NAVEGA.COM, S.A.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>37241.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>      
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>XC NETWORKS, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>37477</strong>
+                           	    <br/>Fecha de inscripción: <strong>19/09/2019</strong>
+                           	    <br/>Usuario final: <strong>ELASTOMEROS TÉCNICOS MOLDEADOS, S. DE R.L. DE C.V.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>37477.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>      
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>COORDINADORA DE CARRIER'S, S.A. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>38412</strong>
+                           	    <br/>Fecha de inscripción: <strong>07/11/2019</strong>
+                           	    <br/>Usuario final: <strong>PROGRESS INTERNATIONAL, LLC.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>38412.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>     
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>MAXCOM TELECOMUNICACIONES, S.A.B. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>38579</strong>
+                           	    <br/>Fecha de inscripción: <strong>13/11/2019</strong>
+                           	    <br/>Usuario final: <strong>SIERRA USA COMMUNICATIONS, INC.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>38579.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>                                                                                             
+                                                             
+                                <li><div>
+                           	    <h3>Autorizado: <strong>GLOBAL EXCHANGE TELECOM, S.A.P.I. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>43530</strong>
+                           	    <br/>Fecha de inscripción: <strong>29/04/2020</strong>
+                           	    <br/>Usuario final: <strong>TECHNOLOGY COMMUNICATIONS, LLC.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>43530.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>                                   
+                                
+                                <li><div>
+                           	    <h3>Autorizado: <strong>MAXCOM TELECOMUNICACIONES, S.A.B. DE C.V.</strong></h3>
+                           	    <br/>Folio de inscripción: <strong>47493</strong>
+                           	    <br/>Fecha de inscripción: <strong>05/10/2020</strong>
+                           	    <br/>Usuario final: <strong>SIERRA USA COMMUNICATIONS, INC.</strong>
+                           	    <br/><strong><a href="<?php echo URLASSETSCRUCES?>47493.pdf" target="_blank">Ver constancia</a></strong>
+                           	    </div>
+                                </li>   
+ 
+                                
+                            </ul>
+                            </div>
+                        </div>
+
+                        
+                        </div>
+                        <!-- filter cnaf -->

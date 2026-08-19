@@ -1,0 +1,1691 @@
+<?php
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.2.4 or newer
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014, British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package	CodeIgniter
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright	Copyright (c) 2014, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license	http://opensource.org/licenses/MIT	MIT License
+ * @link	http://codeigniter.com
+ * @since	Version 1.0.0
+ * @filesource
+ */
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+function getFieldValue($section, $field, $defaultValue = '') {
+	if (!isset($section)) {
+		if ($defaultValue=='TODAY') {
+    		return date('d/m/Y');	
+    	} else {
+        	return $defaultValue;
+		}
+	}
+    if ($section == null) {
+    	if ($defaultValue=='TODAY') {
+    		return date('d/m/Y');	
+    	} else {
+        	return $defaultValue;
+		}
+    }
+    if (!isset($section->$field) OR  $section->$field == null) {
+        if ($defaultValue=='TODAY') {
+    		return date('d/m/Y');
+    	} else {
+        	return $defaultValue;
+		}
+    }
+    return $section->$field;
+}
+
+
+?>
+
+<?php
+$this->load->view('includes_rpc');
+?>
+
+<body>
+
+<!--[if lte IE 8]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+<![endif]-->
+
+    <div id="preloader">
+        <div class="sk-spinner sk-spinner-wave">
+            <div class="sk-rect1"></div>
+            <div class="sk-rect2"></div>
+            <div class="sk-rect3"></div>
+            <div class="sk-rect4"></div>
+            <div class="sk-rect5"></div>
+        </div>
+    </div>
+    <!-- End Preload -->
+
+    <div class="layer"></div>
+    <!-- Mobile menu overlay mask -->
+
+<?php
+$this->load->view('header');
+?>    
+
+
+<div class="container margin_120">
+	<div class="row">
+		
+				<aside class="col-md-3 add_bottom_30">
+			<hr>
+			<div class="widget" id="cat_blog">
+				<h4>Concesiones, permisos y autorizaciones</h4>
+				<ul>
+						<li class="divider"></li>
+				                <li><a href="#concesiones" onclick="window.scrollTo(0, 0);" data-toggle="tab">Concesiones, permisos y autorizaciones</a></li>
+				                <li><a href="#permisosrc" onclick="window.scrollTo(0, 0);" data-toggle="tab">Permisos de radiocomunicación privada</a></li>
+				                <li><a href="#convenios" onclick="window.scrollTo(0, 0);" data-toggle="tab">Convenios</a></li>
+				                <li><a href="#conveniosinterconexioninternacional" onclick="window.scrollTo(0, 0);" data-toggle="tab">Convenios de interconexión internacional</a></li>
+				                <li><a href="#sanciones" onclick="window.scrollTo(0, 0);" data-toggle="tab">Informes, sanciones y supervisión</a></li>
+				                <li><a href="#sanciones_profeco" onclick="window.scrollTo(0, 0);" data-toggle="tab">Sanciones PROFECO</a></li>
+				                <li><a href="#puntosinterconexion" onclick="window.scrollTo(0, 0);" data-toggle="tab">Puntos de interconexión</a></li>
+				                <li><a href="#contratos" onclick="window.scrollTo(0, 0);" data-toggle="tab">Contratos de adhesión</a></li>
+				                <li><a href="#espacios" onclick="window.scrollTo(0, 0);" data-toggle="tab">Tarifas de espacios y servicios de publicidad</a></li>
+                        		<li><a href="#estructura" onclick="window.scrollTo(0, 0);" data-toggle="tab">Estructura accionaria</a></li>
+                        		<li><a href="#intercambio_internet_ixp" onclick="window.scrollTo(0, 0);" data-toggle="tab">Punto de intercambio de tráfico de internet</a></li>
+                        		<li><a href="#gravamenes_embargos" onclick="window.scrollTo(0, 0);" data-toggle="tab">Gravámenes - Embargos</a></li>
+                        		<li><a href="#gravamenes_hipotecas" onclick="window.scrollTo(0, 0);" data-toggle="tab">Gravámenes - Hipotecas</a></li>
+                        		<li><a href="#cruces_fronterizos" onclick="window.scrollTo(0, 0);" data-toggle="tab">Cruces fronterizos</a></li>
+                        		
+                        		<li><a href="#codigos-etica" onclick="window.scrollTo(0, 0);" data-toggle="tab">Códigos de ética</a></li>
+                        		<li><a href="#defensores-audiencia" onclick="window.scrollTo(0, 0);" data-toggle="tab">Defensores de audiencias</a></li>
+                        		<li><a href="#ofertas_publicas" onclick="window.scrollTo(0, 0);" data-toggle="tab">OFERTAS PÚBLICAS DE REFERENCIA</a></li>
+                        		<li><a href="<?php echo URLAPPVISORSERT;?>" target="_blank">Buscador de tarifas al usuario</a></li>
+                        		<li class="divider"></li>
+				</ul>
+				<h4>Normativo y regulatorio</h4>
+				<ul>
+            					<li><a href="#" data-toggle="tab"><b>Actos diversos inscritos</b></a></li>
+            					<li class="subMenu"><a href="#cnaf_filter" onclick="window.scrollTo(0, 0);" data-toggle="tab">Cuadro Nacional de Atribución de Frecuencias</a></li>
+				                <li class="subMenu"><a href="#criterios_pleno" onclick="window.scrollTo(0, 0);" data-toggle="tab">CRITERIOS ADOPTADOS POR EL PLENO</a></li>
+				                <li class="subMenu"><a href="#programas_anuales" onclick="window.scrollTo(0, 0);" data-toggle="tab">PROGRAMAS ANUALES DE TRABAJO</a></li>
+				                <li class="subMenu"><a href="#informes_trimestrales" onclick="window.scrollTo(0, 0);" data-toggle="tab">INFORMES TRIMESTRALES DE ACTIVIDADES</a></li>
+				                <li class="subMenu"><a href="#consultas_publicas" onclick="window.scrollTo(0, 0);" data-toggle="tab">CONSULTAS PÚBLICAS</a></li>
+				                <li class="subMenu"><a href="#resoluciones_materia_interconexion" onclick="window.scrollTo(0, 0);" data-toggle="tab">LINEAMIENTOS, MODELOS Y RESOLUCIONES EN MATERIA DE INTERCONEXIÓN</a></li>
+				                <li class="subMenu"><a href="#planes_tecnicos_fundamentales" onclick="window.scrollTo(0, 0);" data-toggle="tab">PLANES TÉCNICOS FUNDAMENTALES</a></li>
+				                <li class="subMenu"><a href="#modelos_interconexion" onclick="window.scrollTo(0, 0);" data-toggle="tab">MODELOS DE COSTOS</a></li>
+				                <li class="subMenu"><a href="#trimestrales_estadisticos" onclick="window.scrollTo(0, 0);" data-toggle="tab">INFORMES DE ESTADÍSTICAS</a></li>
+						<li class="subMenu"><a href="#donacion_equipos" onclick="window.scrollTo(0, 0);" data-toggle="tab">Resoluciones/Contratos de donación de equipos</a></li>
+				                <li class="divider"></li>
+				                <li><a href="#" data-toggle="tab"><b>ASUNTOS RELACIONADOS CON AGENTES ECONÓMICOS PREPONDERANTES</b></a></li>
+				                <li class="subMenu"><a href="#medidas_obligaciones" onclick="window.scrollTo(0, 0);" data-toggle="tab">MEDIDAS Y OBLIGACIONES IMPUESTAS A AEP</a></li>
+				 </ul>
+			</div><!-- End widget -->
+		</aside><!-- End aside -->
+
+		
+		
+		<div class="col-md-9">
+			<h2 class="tittle_rpc">Registro Público de Concesiones</h2>
+			<h4 class="subtittle_rpc">Todo en un solo lugar</h4>
+			<div class="box_style_1">
+				<div class="post nopadding">
+					
+					<div class="tab-content">
+                    	
+                    	<!-- inicio -->
+                        <?php
+                        	$this->load->view('filters/inicio_filter');
+                        ?>
+                        <!-- inicio -->
+                        
+                        <!-- filter concesiones -->
+                        <?php
+                        	$this->load->view('filters/concesiones_filter');
+                        ?>
+                        <!-- filter concesiones -->
+                        
+                        <!-- filter convenios -->
+                        <?php
+                        	$this->load->view('filters/convenios_filter');
+                        ?>
+                        <!-- filter convenios -->
+                        
+                        <!-- filter convenios de interconexion internacional -->
+                        <?php
+                        	$this->load->view('filters/convenios_interconexion_internacional_filter');
+                        ?>
+                        <!-- filter convenios de interconexion internacional -->
+                        
+                        <!-- filter sanciones -->
+                        <?php
+                        	$this->load->view('filters/sanciones_filter');
+                        ?>
+                        <!-- filter sanciones -->
+                        
+                        <!-- filter cnaf -->
+                        <?php
+                        	$this->load->view('filters/cnaf_filter');
+                        ?>
+                        <!-- filter cnaf -->
+                        
+                        <!-- ofertas publicas -->
+                        <?php
+                        	$this->load->view('filters/ofertas_publicas_filter');
+                        ?>
+                        <!-- ofertas publicas -->
+                                                
+                        <!-- programas anuales -->
+                        <?php
+                        	$this->load->view('filters/programas_anuales_filter');
+                        ?>
+                        <!-- programas anuales -->
+                        
+                        <!-- programas anuales -->
+                        <?php
+                        	$this->load->view('filters/informes_trimestrales_filter');
+                        ?>
+                        <!-- programas anuales -->
+                        
+                        <!-- programas anuales -->
+                        <?php
+                        	$this->load->view('filters/trimestrales_estadisticos_filter');
+                        ?>
+                        <!-- programas anuales -->
+                        
+                        <!-- consultas publicas -->
+                        <?php
+                        	$this->load->view('filters/consultas_publicas_filter');
+                        ?>
+                        <!-- consultas publicas -->
+                        
+                        <!-- criterios pleno -->
+                        <?php
+                        	$this->load->view('filters/criterios_pleno_filter');
+                        ?>
+                        <!-- criterios pleno -->
+                        
+                        <!-- modelos interconexion -->
+                        <?php
+                        	$this->load->view('filters/modelos_interconexion_filter');
+                        ?>
+                        <!-- modelos interconexion -->
+                        
+                        <!-- resoluciones en materia de interconexion -->
+                        <?php
+                        	$this->load->view('filters/resoluciones_materia_interconexion_filter');
+                        ?>
+                        <!-- resoluciones en materia de interconexion -->
+                        
+                        <!-- planes tecnicos fundamentales -->
+                        <?php
+                        	$this->load->view('filters/planes_tecnicos_filter');
+                        ?>
+                        <!-- planes tecnicos fundamentales -->
+                        
+                        <!-- medidas y obligaciones -->
+                        <?php
+                        	$this->load->view('filters/medidas_obligaciones_filter');
+                        ?>
+                        <!-- medidas y obligaciones -->
+                        
+                        <!-- puntos de interconexion -->
+                        <?php
+                        	$this->load->view('filters/puntos_interconexion_filter');
+                        ?>
+                        <!-- puntos de interconexion -->
+                        
+                        <!-- puntos de interconexion -->
+                        <?php
+                        	//$this->load->view('filters/en_construccion_filter');
+                        ?>
+                        <!-- puntos de interconexion -->
+                        
+                        <!-- filter permisos -->
+                        <?php
+                        	$this->load->view('filters/permisos_radioc_filter');
+                        ?>
+                        <!-- filter permisos -->
+                        
+                        <!-- filter contratos adhesion -->
+                        <?php
+                        	$this->load->view('filters/contratos_adhesion_filter');
+                        ?>
+                        <!-- filter contratos adhesion -->
+                        
+                        <!-- filter espacios de publicidad -->
+                        <?php
+                        	$this->load->view('filters/espacios_publicidad_filter');
+                        ?>
+                        <!-- filter espacios de publicidad -->
+                        
+                        <!-- filter estructura accionaria -->
+                        <?php
+                        	$this->load->view('filters/estructura_accionaria_filter');
+                        ?>
+                        <!-- filter estructura accionaria -->
+                        
+                        <!-- filter punto de intercambio de internet -->
+                        <?php
+                        	$this->load->view('filters/punto_intercambio_trafico_internet_filter');
+                        ?>
+                        <!-- filter punto de intercambio de internet -->
+                        
+                        <!-- filter Gravamenes embargos -->
+                        <?php
+                        	$this->load->view('filters/gravamenes_embargos_filter');
+                        ?>
+                        <!-- filter Gravamenes embargos -->
+                        
+                        <!-- filter Gravamenes hipotecas -->
+                        <?php
+                        	$this->load->view('filters/gravamenes_hipotecas_filter');
+                        ?>
+                        <!-- filter Gravamenes hipotecas -->
+                        
+                        <!-- filter Cruces fronterizos -->
+                        <?php
+                        	$this->load->view('filters/cruces_fronterizos_filter');
+                        ?>
+                        <!-- filter Cruces fronterizos -->
+                        
+                        <!-- filter codigos de etica -->
+                        <?php
+                        	$this->load->view('filters/codigos_etica_filter');
+                        ?>
+                        <!-- filter codigos de etica -->
+                        
+                        <!-- filter defensores de audiencia -->
+                        <?php
+                        	 $this->load->view('filters/defensores_audiencia_filter'); 
+                        ?>
+                        <!-- filter defensores de audiencia -->
+                        
+                        <!-- filter defensores de audiencia -->
+                        <?php
+                        	 $this->load->view('filters/sanciones_profeco_filter'); 
+                        ?>
+                        <!-- filter defensores de audiencia -->
+                       <!-- filter donacion de equipos -->
+	        	<?php
+        	 	$this->load->view('filters/donacion_equipos_filter'); 
+        		?>
+       			 <!-- filter donacion de equipos -->
+                    </div>
+				</div><!-- end post -->
+             </div><!-- end box_style_1 -->	
+		</div><!-- End col-md-8-->
+				
+	</div><!-- End row-->   
+</div><!-- End container -->
+
+
+
+
+
+
+
+
+
+
+<!-- START divResults -->    
+<div class="container margin_60 show" id="divResults" name="divResults">
+
+</div><!-- End container -->
+<!-- END divResults -->
+
+    
+    <div class="white_bg">
+        <div class="container margin_60">
+            <div class="main_title">
+                <h2>Lo <span>más</span> consultado</h2>
+                <p>
+                    <!--Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.-->
+                </p>
+            </div>
+            <div class="row add_bottom_45">
+                <div class="col-md-6 other_tours">
+                    <ul>
+<?php
+		foreach($popularList as $popularItem) {
+?>                    	
+                        <li><a href="#" onclick="displayDetail(event,<?php echo getFieldValue($popularItem,'key_item');?>);"><i class="icon_set_1_icon-66"></i><?php echo getFieldValue($popularItem,'description_item');?></a> <?php echo getFieldValue($popularItem,'hits');?> visitas 
+                        </li>
+<?php
+		}
+?>                        
+                    </ul>
+                </div>
+                <!--<div class="col-md-6 other_tours">
+                    <ul>
+                        <li><a href="http://ucsws.ift.org.mx/rpc/pdfs/informes/12350-D.pdf" target="_blank"><i class="icon_set_1_icon-66"></i>RESULTADOS DE LAS ACCIONES DE SUPERVISIÓN / CABLEVISIÓN, S.A. DE C.V. </a>
+                        </li>
+                        <li><a href="http://ucsws.ift.org.mx/rpc/pdfs/informes/12351-D.pdf" target="_blank"><i class="icon_set_1_icon-66"></i>RESULTADOS DE LAS ACCIONES DE SUPERVISIÓN / TELÉFONOS DE MÉXICO, S.A.B. DE C.V. </a>
+                        </li>
+                    </ul>
+                </div>-->
+                <div class="col-md-6 other_tours">
+                    <ul>
+                        <li><a href="<?php echo URLAPPPUBLISHVRPC;?>pdfs/informes/12350-D.pdf" target="_blank"><i class="icon_set_1_icon-66"></i>RESULTADOS DE LAS ACCIONES DE SUPERVISIÓN / CABLEVISIÓN, S.A. DE C.V. </a>
+                        </li>
+                        <li><a href="<?php echo URLAPPPUBLISHVRPC;?>pdfs/informes/12351-D.pdf" target="_blank"><i class="icon_set_1_icon-66"></i>RESULTADOS DE LAS ACCIONES DE SUPERVISIÓN / TELÉFONOS DE MÉXICO, S.A.B. DE C.V. </a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- End row -->
+            
+            <div class="banner colored add_bottom_30">
+                <h4>Datos <span>abiertos</span></h4>
+                <p>
+                    Descargue las bases de datos que conforman el Registro Público de Concesiones
+                </p>
+                <!--<a href="visor/downloads" class="btn_1 white">Área de descargas</a> -->
+                <a href="<?php echo URLAPP;?>visor/downloads" class="btn_1 white">Área de descargas</a>
+            </div>
+            
+            
+            
+            
+            
+        </div><!-- End container -->
+    </div><!-- End white_bg -->
+
+<!--    
+    <section class="promo_full">
+    <div class="promo_full_wp magnific">
+        <div>
+            <h3>Tutorial</h3>
+            <p>
+                Explore el video tutorial sobre el funcionamiento del Registro Público de Concesiones.
+            </p>
+            <a href="https://www.youtube.com/watch?v=5tbJNJDuGMs" class="video" target="_blank"><i class="icon-play-circled2-1"></i></a>
+        </div>
+    </div>
+    </section>
+-->
+    
+    <!-- End section -->
+
+
+<?php
+$this->load->view('faqs');
+?>
+
+<!--    
+    <div class="container margin_60">
+    
+        <div class="main_title">
+            <h2>Some <span>good</span> reasons</h2>
+            <p>
+                Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+            </p>
+        </div>
+        
+        <div class="row">
+        
+            <div class="col-md-4 wow zoomIn" data-wow-delay="0.2s">
+                <div class="feature_home">
+                    <i class="icon_set_1_icon-41"></i>
+                    <h3><span>+120</span> Premium tours</h3>
+                    <p>
+                         Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+                    </p>
+                    <a href="about.html" class="btn_1 outline">Read more</a>
+                </div>
+            </div>
+            
+            <div class="col-md-4 wow zoomIn" data-wow-delay="0.4s">
+                <div class="feature_home">
+                    <i class="icon_set_1_icon-30"></i>
+                    <h3><span>+1000</span> Customers</h3>
+                    <p>
+                         Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+                    </p>
+                    <a href="about.html" class="btn_1 outline">Read more</a>
+                </div>
+            </div>
+            
+            <div class="col-md-4 wow zoomIn" data-wow-delay="0.6s">
+                <div class="feature_home">
+                    <i class="icon_set_1_icon-57"></i>
+                    <h3><span>H24 </span> Support</h3>
+                    <p>
+                         Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+                    </p>
+                    <a href="about.html" class="btn_1 outline">Read more</a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <hr>
+        
+        
+    </div>
+-->    
+
+
+<?php
+	$this->load->view('footer');
+?>
+
+<div id="toTop"></div><!-- Back to top button -->
+
+
+
+ <!-- Specific scripts -->
+<script src="<?php echo URLASSETS?>js/icheck.js"></script>
+<script>
+$('input').iCheck({
+   checkboxClass: 'icheckbox_square-grey',
+   radioClass: 'iradio_square-grey'
+ });
+ </script>
+ <script src="<?php echo URLASSETS?>js/bootstrap-datepicker.js"></script>
+ <script src="<?php echo URLASSETS?>js/bootstrap-timepicker.js"></script>
+ 
+ <script src="<?php echo URLASSETS?>js/bootstrap-table.js"></script>
+ <link rel="stylesheet" href="<?php echo URLASSETS?>css/bootstrap-table.css">
+ 
+ 
+ 
+ <script type="text/javascript" src="<?php echo URLASSETS?>js/plugins/forms/styling/uniform.min.js"></script>
+ <script src="<?php echo URLASSETS?>js/bootstrap_multiselect.js"></script>
+ <script type="text/javascript" src="<?php echo URLASSETS ?>js/plugins/forms/inputs/typeahead/typeahead.bundle-0.11.1.js"></script>
+ 
+ <script type="text/javascript" src="<?php echo URLASSETS ?>/js/plugins/tables/datatables/datatables.min.js"></script>
+ 
+ <!--<script src="<?php echo URLASSETS?>js/dropdown.js"></script>-->
+ 
+ 
+ <script>
+ 
+ $.fn.datepicker.dates['en'] = {
+    days: ["Domingo", "Lunes", "martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+    daysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+    daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+    months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "octubre", "Noviembre", "Diciembre"],
+    monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+    today: "Hoy",
+    clear: "Limpiar",
+    format: "dd/mm/yyyy",
+    titleFormat: "dd/mm/yyyy", /* Leverages same syntax as 'format' */
+    weekStart: 0
+};
+ 
+  //$('input.date-pick').datepicker('setDate', 'today');
+  $('input.date-pick').datepicker();
+  $('input.time-pick').timepicker({
+    minuteStep: 15,
+    showInpunts: false
+})
+  </script>
+  <script src="<?php echo URLASSETS?>js/jquery.ddslick.js"></script>
+   <script>
+   $("select.ddslick").each(function(){
+            $(this).ddslick({
+                showSelectedHTML: true 
+            });
+        });
+        </script>
+        
+   <script>
+    /*
+    $('.multiselect').multiselect({
+    	nonSelectedText: "Ningún servicios seleccionado",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    */
+    
+    // Full width
+    $('.multiselect-full').multiselect({
+        buttonWidth: '100%'
+    });
+    
+    //$('#rpc-services').multiselect();
+    
+    $('#rpc-services').multiselect({
+        nonSelectedText: "Ningún servicio seleccionado",
+        numberDisplayed: 2,
+        nSelectedText: "servicios seleccionados",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    
+    
+    /* Permisos de readiocomunicación */
+   $('#rpc-servicesPRP').multiselect({
+        nonSelectedText: "Ningún servicio seleccionado",
+        numberDisplayed: 2,
+        nSelectedText: "servicios seleccionados",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    
+    $('#rpc-estadosPRP').multiselect({
+    	includeSelectAllOption: true,
+    	allSelectedText: "Nacional",
+    	selectAllText:"Nacional",
+        nonSelectedText: "Ningún Estado seleccionado",
+        numberDisplayed: 2,
+        nSelectedText: "Estados seleccionados",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+
+var bestBpsPRP = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchBPPermisos?query=%QUERY',
+    url: '<?php echo URLAPP;?>/RpcServicesController/searchBPPermisos?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+    
+    $('#concesionario-remote-searchPRP .typeahead').typeahead({minLength: 3,
+  highlight: true}, {
+  name: 'best-bestBpsPRP',
+  limit: 20,
+  items: 20,
+  display: 'concesionario',
+  source: bestBpsPRP,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Concesionarioo inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#concesionario-remote-searchPRP').on('change', function() {
+  var strConcesionario = $('#txtConcesionarioPRP').val();
+  var $input = $(this);
+  try {
+  	
+  	if (strConcesionario=='' || strConcesionario==null) {
+  		$("#txtBPConcesionarioPRP").val('');
+  	}
+  	
+  	var available = $input.data('ttView').datasets[0].itemHash;
+  	var datum = _.findWhere(available, {value: $(this).val()});
+  	if (datum) {
+    	$input.trigger('typeahead:selected', datum);
+  	}  else {
+  		console.log('clean');
+  	}
+  } catch(e) {
+  	console.log('Error-->'+e.message);
+  	//$input.trigger('typeahead:uservalue', '');
+  }
+});
+
+
+$('#concesionario-remote-searchPRP').on('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.concesionario+"->"+suggestion.idBp);
+   $("#txtBPConcesionarioPRP").val(suggestion.idBp);
+});
+
+$('#concesionario-remote-searchPRP').on('typeahead:uservalue', function(e, value) { 
+	console.log('new: [' + value+']'); 
+	$("#txtBPConcesionarioPRP").val('');
+});
+
+
+
+var bestFetsPermisos = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('folio_electronico'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/vrpc/index.php/RpcServicesController/searchFETPermisos?query=%QUERY',
+    url: '<?php echo URLAPP;?>/RpcServicesController/searchFETPermisos?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#fets-remote-searchPRP .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets-permisos',
+  limit: 20,
+  items: 20,
+  display: 'folio_electronico',
+  source: bestFetsPermisos,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'FET inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#fets-remote-searchPRP .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.folio_electronico);
+});
+
+var bestExpedientesPermisos = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('EXPEDIENTE'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchExpedientesPermisos?query=%QUERY',
+    url: '<?php echo URLAPP;?>/RpcServicesController/searchExpedientesPermisos?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#exp-remote-searchPRP .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-expedientes-permisos',
+  display: 'expediente',
+  limit: 20,
+  items: 20,
+  source: bestExpedientesPermisos,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Expediente o distintivo inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#exp-remote-searchPRP .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.expediente);
+});
+
+    
+   /* Termina Permisos de radiocomunicación */
+    
+    $('#rpc-estatus').multiselect({
+        nonSelectedText: "Ningún estatus seleccionado",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    
+    
+    $('#rpc-satelites').multiselect({
+        nonSelectedText: "",
+        enableFiltering: true,
+        enableCaseInsensitiveFiltering: true,
+        filterPlaceholder: "Buscar",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    
+    $('#rpc-posiciones').multiselect({
+        nonSelectedText: "",
+        enableFiltering: true,
+        enableCaseInsensitiveFiltering: true,
+        filterPlaceholder: "Buscar",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    
+    $('#rpc-tipo').multiselect({
+        nonSelectedText: "Ningún tipo seleccionado",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    
+    $('#rpc-tipo-uso').multiselect({
+        nonSelectedText: "Ningún de uso tipo seleccionado",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    
+    
+    $('#rpc-frecuencia').multiselect({
+        nonSelectedText: "Ninguna frecuencia seleccionada",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    
+    $('#rpc-tipo-informe').multiselect({
+        nonSelectedText: "Ningún tipo seleccionado",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    
+    $('#rpc-tipo-convenio').multiselect({
+    	allSelectedText: "Todos los tipos",
+    	selectAllText:"Todos los tipos",
+        nonSelectedText: "Ningún tipo seleccionado",
+        numberDisplayed: 2,
+        nSelectedText: "tipos seleccionados",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    
+    $('#rpc-estados').multiselect({
+    	includeSelectAllOption: true,
+    	allSelectedText: "Nacional",
+    	selectAllText:"Nacional",
+        nonSelectedText: "Ningún Estado seleccionado",
+        numberDisplayed: 2,
+        nSelectedText: "Estados seleccionados",
+        onChange: function() {
+            $.uniform.update();
+        }
+    });
+    
+    $(".styled, .multiselect-container input").uniform({ radioClass: 'choice'});
+    
+    
+  var bestBps = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchBP?query=%QUERY',
+      url: '<?php echo URLAPP;?>/RpcServicesController/searchBP?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#concesionario-remote-search .typeahead').typeahead({minLength: 3,
+  highlight: true}, {
+  name: 'best-cedentes',
+  limit: 1000,
+  items: 50,
+  display: 'concesionario',
+  source: bestBps,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Concesionario inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#concesionario-remote-search').on('change', function() {
+  //$("#txtBPConcesionario").val('');
+  
+  var strConcesionario = $('#txtConcesionario').val();
+  console.log('strConcesionario-->'+strConcesionario);
+  
+  var $input = $(this);
+  try {
+  	
+  	if (strConcesionario=='' || strConcesionario==null) {
+  		$("#txtBPConcesionario").val('');
+  	}
+  	  	
+  	var available = $input.data('ttView').datasets[0].itemHash;
+  	var datum = _.findWhere(available, {value: $(this).val()});
+  	if (datum) {
+    	$input.trigger('typeahead:selected', datum);
+  	} else {
+  		console.log('clean');
+  	}
+  } catch(e) {
+  	console.log('Error-->'+e.message);
+  	//$input.trigger('typeahead:uservalue', '');
+  }
+});
+
+$('#concesionario-remote-search').on('typeahead:select', function(ev, suggestion) {
+  console.log('Selection BP: ' + suggestion.concesionario+"->"+suggestion.idBp);
+   $("#txtBPConcesionario").val(suggestion.idBp);
+});
+
+$('#concesionario-remote-search').on('typeahead:uservalue', function(e, value) { 
+	console.log('new: [' + value+']'); 
+	$("#txtBPConcesionario").val('');
+});
+
+
+/*
+$('#concesionario-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.CONCESIONARIO);
+   $("#txtBPConcesionario").val(suggestion.ID_BP);
+});
+*/
+
+
+var bestFets = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('folio_electronico'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+   // url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchFET?query=%QUERY',
+      url: '<?php echo URLAPP;?>/RpcServicesController/searchFET?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#fets-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  limit: 20,
+  items: 20,
+  display: 'folio_electronico',
+  source: bestFets,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'FET inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#fets-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.folio_electronico);
+   //$("#txtBPConcesionario").val(suggestion.ID_BP);
+   //fillFetsCombo(suggestion.ID_BP);
+});
+
+// searchBP
+// searchConvBP1
+
+/* busqueda BP */
+var bestConvOperador1 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchConvBP1?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchConvBP1?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#conv-source1-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'concesionario',
+  source: bestConvOperador1,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#conv-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.concesionario + "-" + suggestion.idBp);
+  $("#conv-source1-bp").val(suggestion.idBp);
+});
+/* busqueda BP */
+
+
+var bestConvOperador2 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+   // url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchConvBP2?query=%QUERY',
+    url: '<?php echo URLAPP;?>/RpcServicesController/searchConvBP2?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#conv-source2-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'concesionario',
+  source: bestConvOperador2,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#conv-source2-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.concesionario);
+  $("#conv-source2-bp").val(suggestion.idBp);
+});
+
+//
+
+/*
+var bestConvDesc = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CI_DESCRIP_CONV'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    url: 'http://ucsweb.ift.org.mx/vrpc/index.php/RpcServicesController/searchConvByDesc?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#convenio_desc-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-cdescriptions',
+  display: 'ci_descrip_conv',
+  source: bestConvDesc,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#convenio_desc-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.ci_descrip_conv);
+});
+
+*/
+
+
+var bestExpedientes = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('EXPEDIENTE'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchExpedientes?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchExpedientes?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#exp-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-expedientes',
+  display: 'expediente',
+  limit: 20,
+  items: 20,
+  source: bestExpedientes,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Expediente o distintivo inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#exp-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.expediente);
+});
+    
+
+
+/*
+var bestSancionDesc = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('TIPO_INFORME'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    url: 'http://ucsweb.ift.org.mx/vrpc/index.php/RpcServicesController/searchSancionByDesc?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#sancion_desc-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-sdescriptions',
+  display: 'TIPO_INFORME',
+  source: bestSancionDesc,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#sancion_desc-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.TIPO_INFORME);
+});
+*/
+
+//
+
+var bestSancionOperador = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('AEP'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchSancionByOperador?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchSancionByOperador?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#soperador_desc-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-soperadores',
+  display: 'concesionario',
+  source: bestSancionOperador,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#soperador_desc-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.concesionario);
+  $("#txtSancionBp").val(suggestion.idBp);
+  
+});
+
+
+/* busqueda puntos BP */
+var bestPuntosOperador = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchPuntosBP?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchPuntosBP?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#puntos-bp-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'concesionario',
+  source: bestPuntosOperador,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#puntos-bp-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.concesionario);
+  $("#puntos-source1-bp").val(suggestion.idBp);
+});
+/* busqueda puntos BP */
+
+/* busqueda puntos description */
+var bestPuntosOperadorDesc = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('PUNTOSDESC'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchPuntosDescription?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchPuntosDescription?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#puntos-desc1-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'ci_descrip_conv',
+  source: bestPuntosOperadorDesc,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#puntos-desc1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.ci_descrip_conv);
+});
+/* busqueda puntos description */
+
+
+
+
+/* contratos adhesion */
+var bestContOperador1 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchContratoAdhesionBP?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchContratoAdhesionBP?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+
+
+$('#cont-source1-remote-search .typeahead').typeahead({minLength: 3,
+  highlight: true}, {
+  name: 'best-fets',
+  limit: 20,
+  items: 20,
+  display: 'concesionario',
+  source: bestContOperador1,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#cont-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.concesionario);
+  console.log('Selection BP: ' + suggestion.idBp);
+  $("#cont-source1-bp").val(suggestion.idBp);
+});
+
+
+var bestContFetOperador1 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('FOLIO_ELECTRONICO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchContratoAdhesionFET?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchContratoAdhesionFET?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#contFet-source1-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'folio_electronico',
+  source: bestContFetOperador1,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Folio electrónico inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#contFet-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.folio_electronico);
+});
+
+/* contratos adhesion */
+
+
+
+
+/* espacios de publicidad */
+var bestEspaciosOperador1 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchEspaciosBP?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchEspaciosBP?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#espacios-source1-remote-search .typeahead').typeahead({minLength: 3,
+  highlight: true}, {
+  name: 'best-fets',
+  limit: 20,
+  items: 20,
+  display: 'concesionario',
+  source: bestEspaciosOperador1,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#espacios-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.concesionario);
+  $("#espacios-source1-bp").val(suggestion.idBp);
+});
+
+
+var bestEspaciosFetOperador1 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('FOLIO_ELECTRONICO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchEspaciosFET?query=%QUERY',
+	 url: '<?php echo URLAPP;?>/RpcServicesController/searchEspaciosFET?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#espaciosFet-source1-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'folio_electronico',
+  source: bestEspaciosFetOperador1,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Folio electrónico inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#espaciosFet-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.folio_electronico);
+});
+
+/* espacios de publicidad */
+
+
+/* estructura accionaria */
+var bestEstructuraOperador1 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchEstructuraBP?query=%QUERY',
+	 url: '<?php echo URLAPP;?>/RpcServicesController/searchEstructuraBP?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#estructura-source1-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-bps-estructura',
+  limit: 20,
+  items: 20,
+  display: 'concesionario',
+  source: bestEstructuraOperador1,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#estructura-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.concesionario);
+  $("#estructura-source1-bp").val(suggestion.idBp);
+});
+
+/*
+var bestEstructuraFetOperador1 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('FOLIO_ELECTRONICO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    url: 'http://ucsweb.ift.org.mx/vrpc/index.php/RpcServicesController/searchEstructuraFET?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+
+$('#estructuraFet-source1-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'folio_electronico',
+  source: bestEstructuraFetOperador1,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Folio electrónico inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#estructuraFet-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.folio_electronico);
+});
+*/
+
+/* estructura accionaria */
+
+
+/* interconexion internacional */
+var bestIntInternacionalOperador1 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchIntInternacionalBP?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchIntInternacionalBP?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#intinternacional-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'concesionario',
+  source: bestIntInternacionalOperador1,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#intinternacional-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection BP: ' + suggestion.idBp);
+  $("#intinternacional-source1-bp").val(suggestion.idBp);
+});
+
+
+var bestIntInternacionalOperadorExt1 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchIntInternacionalExtBP?query=%QUERY',
+	 url: '<?php echo URLAPP;?>/RpcServicesController/searchIntInternacionalExtBP?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#intinternacionalext-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'concesionario',
+  source: bestIntInternacionalOperadorExt1,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#intinternacionalext-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.idBp);
+  $("#intinternacionalext-source1-bp").val(suggestion.idBp);
+});
+
+/* interconexion internacional */
+
+/* codigos de etica */
+var bestCodigosEOperador = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchCodigosEBP?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchCodigosEBP?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#codigose-source1-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'concesionario',
+  source: bestCodigosEOperador,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#codigose-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.concesionario);
+  $("#codigose-source1-bp").val(suggestion.idBp);
+});
+
+
+var bestCodigosEFetOperador1 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('FOLIO_ELECTRONICO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchCodigosEFET?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchCodigosEFET?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+
+$('#codigoseFet-source1-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'folio_electronico',
+  source: bestCodigosEFetOperador1,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Folio electrónico inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#codigoseFet-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.folio_electronico);
+});
+
+
+
+var bestCodigosEDistintivo = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('EXPEDIENTE'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+//    url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchCodigosEDistintivo?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchCodigosEDistintivo?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+
+$('#codigoseDistintivo-source1-remote-search .typeahead').typeahead({minLength: 3,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'expediente',
+  source: bestCodigosEDistintivo,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Distintivo inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#codigoseDistintivo-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.expediente);
+});
+
+
+/* codigos de etica */
+
+
+
+
+
+/* defensores de audiencia */
+var bestDefensoresAOperador = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('CONCESIONARIO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchDefensoresABP?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchDefensoresABP?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+$('#defensoresa-source1-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'concesionario',
+  source: bestDefensoresAOperador,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Operador inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#defensoresa-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.concesionario);
+  $("#defensoresa-source1-bp").val(suggestion.idBp);
+});
+
+
+var bestDefensoresAFetOperador1 = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('FOLIO_ELECTRONICO'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+//    url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchDefensoresAFET?query=%QUERY',
+url: '<?php echo URLAPP;?>/RpcServicesController/searchDefensoresAFET?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+
+$('#defensoresaFet-source1-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'folio_electronico',
+  source: bestDefensoresAFetOperador1,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Folio electrónico inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#defensoresaFet-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.folio_electronico);
+});
+
+
+
+var bestDefensoresADistintivo = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('EXPEDIENTE'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchDefensoresADistintivo?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchDefensoresADistintivo?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+
+$('#defensoresaDistintivo-source1-remote-search .typeahead').typeahead({minLength: 3,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'expediente',
+  source: bestDefensoresADistintivo,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Distintivo inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#defensoresaDistintivo-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.expediente);
+});
+
+
+var bestDefensoresADefensor = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('EXPEDIENTE'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+  	cache : false,
+    //url: '<?php echo URLAPP;?>/index.php/RpcServicesController/searchDefensoresADefensor?query=%QUERY',
+	url: '<?php echo URLAPP;?>/RpcServicesController/searchDefensoresADefensor?query=%QUERY',
+    wildcard: '%QUERY'
+  }
+});
+
+
+$('#defensoresaDefensor-source1-remote-search .typeahead').typeahead({minLength: 4,
+  highlight: true}, {
+  name: 'best-fets',
+  display: 'expediente',
+  source: bestDefensoresADefensor,
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+        'Defensor inexistente',
+      '</div>'
+    ].join('\n')
+  }
+});
+
+$('#defensoresaDefensor-source1-remote-search .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  console.log('Selection: ' + suggestion.dummyVar);
+  $("#defensoresa-hash-defensor").val(suggestion.dummyVar);
+});
+
+/* defensores de audiencia */
+
+
+
+
+
+
+
+$('a[data-toggle="tab"]').on('shown', function (e) {
+    $('.dropdown-menu li.active').removeClass('active');
+    $(this).parent('li').addClass('active');
+})
+
+    
+   </script>     
+  </body>
+</html>

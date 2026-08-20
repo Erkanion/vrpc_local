@@ -55,7 +55,7 @@ class Visor extends CI_Controller {
 
 	public function generarReporteProrroga() {
 		$dataInput = array(
-			'dummy' => '?'
+			'tipoReporte' => 'RP'
 		);
 
 		$logPath = APPPATH . 'logs/genReporteServicesCRT.txt';

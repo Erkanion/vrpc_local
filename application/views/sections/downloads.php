@@ -262,7 +262,7 @@ $this->load->view('header');
                         </div>
                         
                         <div class="pricing-table-sign-up">
-                            <a href="<?php echo URLAPP; ?>visor/generarReporteProrroga" class="btn_1 js-prorroga-download" data-download-url="<?php echo URLAPP; ?>visor/generarReporteProrroga">Base de datos</a>
+                            <a href="<?php echo URLAPP; ?>visor/generarReporteProrroga" class="btn_1 js-prorroga-download" data-download-url="<?php echo URLAPP; ?>visor/generarReporteProrroga" data-file-name="Reporte_Prorroga.xlsx">Base de datos</a>
                         </div>
                     </div><!-- End pricing-table-->
                 </div><!-- End col-md-3 -->
@@ -330,7 +330,7 @@ $this->load->view('header');
                         </div>
                         
                         <div class="pricing-table-sign-up">
-                            <a href="/vrpc/assets/publish/uploads/tarifas_telecom/07_tarifas_servicios_fijos_250626.xlsx" class="btn_1" target="_blank">Base de datos</a>
+                            <a href="<?php echo URLAPP; ?>visor/generarReporteTarifasFijas" class="btn_1 js-prorroga-download" data-download-url="<?php echo URLAPP; ?>visor/generarReporteTarifasFijas" data-file-name="Reporte_Tarifas_Servicios_Fijos.xlsx">Base de datos</a>
                         </div>
                     </div>
                 </div>
@@ -663,6 +663,7 @@ body.prorroga-download-busy {
         }
 
         var downloadUrl = $(this).data('download-url') || $(this).attr('href');
+        var defaultFileName = $(this).data('file-name') || 'Reporte.xlsx';
         var request = new XMLHttpRequest();
 
         startLoading();
@@ -680,7 +681,7 @@ body.prorroga-download-busy {
         request.onload = function () {
             var contentType = request.getResponseHeader('Content-Type') || '';
             var disposition = request.getResponseHeader('Content-Disposition') || '';
-            var fileName = 'Reporte_Prorroga.xlsx';
+            var fileName = defaultFileName;
 
             if (disposition.indexOf('filename=') !== -1) {
                 fileName = disposition.split('filename=')[1].split(';')[0].replace(/['"]/g, '').trim();

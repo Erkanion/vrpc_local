@@ -54,8 +54,16 @@ class Visor extends CI_Controller {
 	}
 
 	public function generarReporteProrroga() {
+		$this->generarReporte('RP');
+	}
+
+	public function generarReporteTarifasFijas() {
+		$this->generarReporte('T');
+	}
+
+	private function generarReporte($tipoReporte) {
 		$dataInput = array(
-			'tipoReporte' => 'RP'
+			'tipoReporte' => $tipoReporte
 		);
 
 		$logPath = APPPATH . 'logs/genReporteServicesCRT.txt';

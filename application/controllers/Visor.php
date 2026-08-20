@@ -62,6 +62,11 @@ class Visor extends CI_Controller {
 	}
 
 	private function generarReporte($tipoReporte) {
+		// Los reportes de tarifas pueden tardar más de cinco minutos en generarse.
+		// Evita que PHP cierre la conexión SOAP antes de recibir el archivo.
+		ini_set('default_socket_timeout', 1800);
+		set_time_limit(0);
+
 		$dataInput = array(
 			'tipoReporte' => $tipoReporte
 		);

@@ -136,7 +136,9 @@ class Visor extends CI_Controller {
 					continue;
 				}
 				if ($entry->key === 'datoArray') {
-					$fileContent = $this->decodeReportContent($entry->value);
+					$fileContent = $tipoReporte === 'T'
+						? $this->decodeReportContent($entry->value)
+						: base64_decode($entry->value, true);
 				}
 				if ($entry->key === 'nombreReporte' && !empty($entry->value)) {
 					$fileName = $entry->value;

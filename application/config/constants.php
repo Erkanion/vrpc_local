@@ -151,4 +151,5 @@ defined('URLASSETSDEFENSORESA')      OR define('URLASSETSDEFENSORESA', URLAPPPUB
 defined('URLASSETSOFERTAS')      OR define('URLASSETSOFERTAS', URLAPPPUBLISH.'upload/files/ofertapublica/');
 defined('URLASSETSOFERTAP')      OR define('URLASSETSOFERTAP', URLAPPPUBLISH.'upload/files/ofertapublica/');
 defined('URLASSETSDONACIONES')      OR define('URLASSETSDONACIONES', $hostSert.'/tarifasrpc/upload/files/criteriosadoptados/');
+defined('URLASSETSPLANESTECNICOS')      OR define('URLASSETSPLANESTECNICOS', 'https://sert.ift.org.mx/tarifasrpc/upload/files/planestecnicosfunda/');
 defined('URLASSETSEXCHINT') OR define('URLASSETSEXCHINT', URLAPPPUBLISH.'upload/files/');

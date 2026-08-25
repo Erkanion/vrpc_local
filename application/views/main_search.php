@@ -102,7 +102,7 @@ $this->load->view('header');
 			<div class="widget" id="cat_blog">
         <ul>
           <li class="divider"></li>
-            <li><a href="#buscador" onclick="window.scrollTo(0, 0);" data-toggle="tab" style="padding-bottom: 25px;"><i class="icon-search"></i>Búsqueda de documentos</a></li>
+            <li style="display:none;"><a href="#buscador" onclick="window.scrollTo(0, 0);" data-toggle="tab" style="padding-bottom: 25px;"><i class="icon-search"></i>Búsqueda de documentos</a></li>
 						<li><h4>Concesiones, permisos y autorizaciones</h4></li>
             <li class="divider"></li>
             <li><a href="#concesiones" onclick="window.scrollTo(0, 0);" data-toggle="tab">Concesiones, permisos y autorizaciones</a></li>

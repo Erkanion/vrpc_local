@@ -89,6 +89,8 @@ $this->load->view('includes_rpc');
     <!-- Mobile menu overlay mask -->
 
 <?php
+$meses = array(1=>'enero', 2=>'febrero', 3=>'marzo', 4=>'abril', 5=>'mayo', 6=>'junio', 7=>'julio', 8=>'agosto', 9=>'septiembre', 10=>'octubre', 11=>'noviembre', 12=>'diciembre');
+$fechaActual = date('j') . ' de ' . $meses[(int) date('n')] . ' de ' . date('Y');
 $this->load->view('header');
 ?>
 
@@ -258,7 +260,7 @@ $this->load->view('header');
                         <div class="pricing-table-space "></div>
                         <div class="pricing-table-features">
                             <p><strong>Base de datos completa con el periodo para solicitar prórroga de vigencia <i class="icon-info-circled" title="Conoce y descarga el reporte especializado que concentra la información sobre el periodo en el que se deberá solicitar la prórroga de vigencia de los Títulos de Concesión y Autorizaciones, con el propósito de facilitar la consulta y análisis de esta información por parte de concesionarios, autorizados y público interesado."></i></strong></p>
-                            <p>al <?php echo date('j'); ?> de <?php $meses=array(1=>'enero',2=>'febrero',3=>'marzo',4=>'abril',5=>'mayo',6=>'junio',7=>'julio',8=>'agosto',9=>'septiembre',10=>'octubre',11=>'noviembre',12=>'diciembre'); echo $meses[(int)date('n')]; ?> de <?php echo date('Y'); ?></p>
+                            <p>al <?php echo $fechaActual; ?></p>
                         </div>
                         
                         <div class="pricing-table-sign-up">
@@ -326,7 +328,7 @@ $this->load->view('header');
                             <p><strong>Base de datos completa</p>
                             <p><strong> de tarifas de servicios fijos</p>
                             <p><strong> de 2015 a 2025</strong></p>
-                            <p>al 25 de junio de 2026</p>
+                            <p>al <?php echo $fechaActual; ?></p>
                         </div>
                         
                         <div class="pricing-table-sign-up">

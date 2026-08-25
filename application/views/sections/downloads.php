@@ -89,6 +89,8 @@ $this->load->view('includes_rpc');
     <!-- Mobile menu overlay mask -->
 
 <?php
+$meses = array(1=>'enero', 2=>'febrero', 3=>'marzo', 4=>'abril', 5=>'mayo', 6=>'junio', 7=>'julio', 8=>'agosto', 9=>'septiembre', 10=>'octubre', 11=>'noviembre', 12=>'diciembre');
+$fechaActual = date('j') . ' de ' . $meses[(int) date('n')] . ' de ' . date('Y');
 $this->load->view('header');
 ?>
 
@@ -258,11 +260,11 @@ $this->load->view('header');
                         <div class="pricing-table-space "></div>
                         <div class="pricing-table-features">
                             <p><strong>Base de datos completa con el periodo para solicitar prórroga de vigencia <i class="icon-info-circled" title="Conoce y descarga el reporte especializado que concentra la información sobre el periodo en el que se deberá solicitar la prórroga de vigencia de los Títulos de Concesión y Autorizaciones, con el propósito de facilitar la consulta y análisis de esta información por parte de concesionarios, autorizados y público interesado."></i></strong></p>
-                            <p>al <?php echo date('j'); ?> de <?php $meses=array(1=>'enero',2=>'febrero',3=>'marzo',4=>'abril',5=>'mayo',6=>'junio',7=>'julio',8=>'agosto',9=>'septiembre',10=>'octubre',11=>'noviembre',12=>'diciembre'); echo $meses[(int)date('n')]; ?> de <?php echo date('Y'); ?></p>
+                            <p>al <?php echo $fechaActual; ?></p>
                         </div>
                         
                         <div class="pricing-table-sign-up">
-                            <a href="<?php echo URLAPP; ?>visor/generarReporteProrroga" class="btn_1 js-prorroga-download" data-download-url="<?php echo URLAPP; ?>visor/generarReporteProrroga">Base de datos</a>
+                            <a href="<?php echo URLAPP; ?>visor/generarReporteProrroga" class="btn_1 js-prorroga-download" data-download-url="<?php echo URLAPP; ?>visor/generarReporteProrroga" data-file-name="Reporte_Prorroga.xlsx">Base de datos</a>
                         </div>
                     </div><!-- End pricing-table-->
                 </div><!-- End col-md-3 -->
@@ -326,11 +328,11 @@ $this->load->view('header');
                             <p><strong>Base de datos completa</p>
                             <p><strong> de tarifas de servicios fijos</p>
                             <p><strong> de 2015 a 2025</strong></p>
-                            <p>al 25 de junio de 2026</p>
+                            <p>al <?php echo $fechaActual; ?></p>
                         </div>
                         
                         <div class="pricing-table-sign-up">
-                            <a href="/vrpc/assets/publish/uploads/tarifas_telecom/07_tarifas_servicios_fijos_250626.xlsx" class="btn_1" target="_blank">Base de datos</a>
+                            <a href="<?php echo URLAPP; ?>visor/generarReporteTarifasFijas" class="btn_1 js-prorroga-download" data-download-url="<?php echo URLAPP; ?>visor/generarReporteTarifasFijas" data-file-name="Reporte_Tarifas_Servicios_Fijos.xlsx">Base de datos</a>
                         </div>
                     </div>
                 </div>
@@ -543,6 +545,21 @@ $this->load->view('header');
     transition: width 0.25s ease;
 }
 
+.prorroga-download-overlay__progress-bar.is-indeterminate {
+    width: 35% !important;
+    animation: prorroga-progress-indeterminate 1.4s ease-in-out infinite;
+    transition: none;
+}
+
+@keyframes prorroga-progress-indeterminate {
+    0% {
+        transform: translateX(-110%);
+    }
+    100% {
+        transform: translateX(290%);
+    }
+}
+
 .prorroga-download-overlay__progress-meta {
     margin-top: 12px;
     display: flex;
@@ -588,14 +605,29 @@ body.prorroga-download-busy {
     var simulatedProgressTimer = null;
     var currentProgress = 0;
     var isDownloading = false;
+    var loadingStartedAt = 0;
 
     function updateProgress(value, statusText) {
         currentProgress = Math.max(0, Math.min(100, value));
+        $progressBar.removeClass('is-indeterminate');
         $progressBar.css('width', currentProgress + '%');
         $progressText.text(Math.round(currentProgress) + '%');
         if (statusText) {
             $progressStatus.text(statusText);
         }
+    }
+
+    function showIndeterminateProgress() {
+        var elapsedSeconds = Math.floor((Date.now() - loadingStartedAt) / 1000);
+        var minutes = Math.floor(elapsedSeconds / 60);
+        var seconds = elapsedSeconds % 60;
+        var elapsedText = minutes > 0
+            ? minutes + ' min ' + seconds + ' s'
+            : seconds + ' s';
+
+        $progressBar.addClass('is-indeterminate');
+        $progressText.text('Procesando');
+        $progressStatus.text('Tiempo transcurrido: ' + elapsedText);
     }
 
     function startLoading() {
@@ -604,12 +636,19 @@ body.prorroga-download-busy {
         $overlay.addClass('is-visible').attr('aria-hidden', 'false');
         $('body').addClass('prorroga-download-busy');
         isDownloading = true;
+        loadingStartedAt = Date.now();
         $downloadButton.addClass('is-disabled').attr('aria-disabled', 'true').text('Generando...');
         simulatedProgressTimer = window.setInterval(function () {
-            if (currentProgress < 90) {
-                updateProgress(currentProgress + 5, 'Generando documento...');
+            if (currentProgress < 40) {
+                updateProgress(currentProgress + 4, 'Preparando información...');
+            } else if (currentProgress < 70) {
+                updateProgress(currentProgress + 2, 'Generando documento...');
+            } else if (currentProgress < 85) {
+                updateProgress(currentProgress + 1, 'Procesando el reporte...');
+            } else {
+                showIndeterminateProgress();
             }
-        }, 350);
+        }, 500);
     }
 
     function stopSimulation() {
@@ -663,6 +702,7 @@ body.prorroga-download-busy {
         }
 
         var downloadUrl = $(this).data('download-url') || $(this).attr('href');
+        var defaultFileName = $(this).data('file-name') || 'Reporte.xlsx';
         var request = new XMLHttpRequest();
 
         startLoading();
@@ -680,7 +720,7 @@ body.prorroga-download-busy {
         request.onload = function () {
             var contentType = request.getResponseHeader('Content-Type') || '';
             var disposition = request.getResponseHeader('Content-Disposition') || '';
-            var fileName = 'Reporte_Prorroga.xlsx';
+            var fileName = defaultFileName;
 
             if (disposition.indexOf('filename=') !== -1) {
                 fileName = disposition.split('filename=')[1].split(';')[0].replace(/['"]/g, '').trim();

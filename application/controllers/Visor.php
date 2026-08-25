@@ -54,8 +54,21 @@ class Visor extends CI_Controller {
 	}
 
 	public function generarReporteProrroga() {
+		$this->generarReporte('RP');
+	}
+
+	public function generarReporteTarifasFijas() {
+		$this->generarReporte('T');
+	}
+
+	private function generarReporte($tipoReporte) {
+		// Los reportes de tarifas pueden tardar más de cinco minutos en generarse.
+		// Evita que PHP cierre la conexión SOAP antes de recibir el archivo.
+		ini_set('default_socket_timeout', 1800);
+		set_time_limit(0);
+
 		$dataInput = array(
-			'dummy' => '?'
+			'tipoReporte' => $tipoReporte
 		);
 
 		$logPath = APPPATH . 'logs/genReporteServicesCRT.txt';
@@ -123,7 +136,9 @@ class Visor extends CI_Controller {
 					continue;
 				}
 				if ($entry->key === 'datoArray') {
-					$fileContent = base64_decode($entry->value, true);
+					$fileContent = $tipoReporte === 'T'
+						? $this->decodeReportContent($entry->value)
+						: base64_decode($entry->value, true);
 				}
 				if ($entry->key === 'nombreReporte' && !empty($entry->value)) {
 					$fileName = $entry->value;
@@ -173,6 +188,25 @@ class Visor extends CI_Controller {
 		echo !empty($errorMessage)
 			? 'La solicitud genReporteServicesCRT falló: ' . $errorMessage
 			: 'La solicitud genReporteServicesCRT falló. Revisar application/logs/genReporteServicesCRT.txt';
+	}
+
+	private function decodeReportContent($value) {
+		if (!is_string($value) || $value === '') {
+			return false;
+		}
+
+		// Dependiendo del tipo definido por el servicio SOAP, PHP puede entregar
+		// datoArray ya decodificado o conservarlo como una cadena Base64.
+		if (substr($value, 0, 4) === "PK\x03\x04") {
+			return $value;
+		}
+
+		$value = preg_replace('/^data:[^;]+;base64,/', '', trim($value));
+		$decodedValue = base64_decode(strtr($value, '-_', '+/'), true);
+
+		return is_string($decodedValue) && substr($decodedValue, 0, 4) === "PK\x03\x04"
+			? $decodedValue
+			: false;
 	}
 
 

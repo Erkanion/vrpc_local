@@ -543,6 +543,21 @@ $this->load->view('header');
     transition: width 0.25s ease;
 }
 
+.prorroga-download-overlay__progress-bar.is-indeterminate {
+    width: 35% !important;
+    animation: prorroga-progress-indeterminate 1.4s ease-in-out infinite;
+    transition: none;
+}
+
+@keyframes prorroga-progress-indeterminate {
+    0% {
+        transform: translateX(-110%);
+    }
+    100% {
+        transform: translateX(290%);
+    }
+}
+
 .prorroga-download-overlay__progress-meta {
     margin-top: 12px;
     display: flex;
@@ -588,14 +603,29 @@ body.prorroga-download-busy {
     var simulatedProgressTimer = null;
     var currentProgress = 0;
     var isDownloading = false;
+    var loadingStartedAt = 0;
 
     function updateProgress(value, statusText) {
         currentProgress = Math.max(0, Math.min(100, value));
+        $progressBar.removeClass('is-indeterminate');
         $progressBar.css('width', currentProgress + '%');
         $progressText.text(Math.round(currentProgress) + '%');
         if (statusText) {
             $progressStatus.text(statusText);
         }
+    }
+
+    function showIndeterminateProgress() {
+        var elapsedSeconds = Math.floor((Date.now() - loadingStartedAt) / 1000);
+        var minutes = Math.floor(elapsedSeconds / 60);
+        var seconds = elapsedSeconds % 60;
+        var elapsedText = minutes > 0
+            ? minutes + ' min ' + seconds + ' s'
+            : seconds + ' s';
+
+        $progressBar.addClass('is-indeterminate');
+        $progressText.text('Procesando');
+        $progressStatus.text('Tiempo transcurrido: ' + elapsedText);
     }
 
     function startLoading() {
@@ -604,12 +634,19 @@ body.prorroga-download-busy {
         $overlay.addClass('is-visible').attr('aria-hidden', 'false');
         $('body').addClass('prorroga-download-busy');
         isDownloading = true;
+        loadingStartedAt = Date.now();
         $downloadButton.addClass('is-disabled').attr('aria-disabled', 'true').text('Generando...');
         simulatedProgressTimer = window.setInterval(function () {
-            if (currentProgress < 90) {
-                updateProgress(currentProgress + 5, 'Generando documento...');
+            if (currentProgress < 40) {
+                updateProgress(currentProgress + 4, 'Preparando información...');
+            } else if (currentProgress < 70) {
+                updateProgress(currentProgress + 2, 'Generando documento...');
+            } else if (currentProgress < 85) {
+                updateProgress(currentProgress + 1, 'Procesando el reporte...');
+            } else {
+                showIndeterminateProgress();
             }
-        }, 350);
+        }, 500);
     }
 
     function stopSimulation() {

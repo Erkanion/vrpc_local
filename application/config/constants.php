@@ -157,4 +157,4 @@ defined('URLASSETSEXCHINT') OR define('URLASSETSEXCHINT', URLAPPPUBLISHVRPC.'ass
 defined('URLASSETSPLANESTECNICOS')      OR define('URLASSETSPLANESTECNICOS',URLAPPPUBLISHVRPC.'assets/publish/planesTecnicosFundamentales/');
 defined('URLASSETSCONSULTASPUBLICAS')      OR define('URLASSETSCONSULTASPUBLICAS', URLAPPPUBLISHVRPC.'/assets/publish/consultaspublicas/');
 
-defined('URLASSETSCNA')      OR define('URLASSETSCNA', URLAPPPUBLISHVRPC.'/assets/publish/cuadronacional/');
+defined('URLASSETSCNAF')      OR define('URLASSETSCNAF', URLAPPPUBLISHVRPC.'assets/publish/cuadronacional/');

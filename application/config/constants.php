@@ -152,9 +152,10 @@ defined('URLASSETSCODIGOS')      OR define('URLASSETSCODIGOS', URLAPPPUBLISHVRPC
 defined('URLASSETSDEFENSORESA')      OR define('URLASSETSDEFENSORESA', URLAPPPUBLISHVRPC.'assets/publish/defensoresaudiencia/');
 defined('URLASSETSOFERTAS')      OR define('URLASSETSOFERTAS', URLAPPPUBLISHVRPC.'assets/publish/ofertapublica/');
 defined('URLASSETSOFERTAP')      OR define('URLASSETSOFERTAP', URLAPPPUBLISHVRPC.'assets/publish/ofertapublica/');
-defined('URLASSETSDONACIONES')      OR define('URLASSETSDONACIONES', $hostSert.'/tarifasrpc/assets/publish/criteriosadoptados/');
+defined('URLASSETSDONACIONES')      OR define('URLASSETSDONACIONES', URLAPPPUBLISHVRPC.'assets/publish/criteriosadoptados/');
 defined('URLASSETSEXCHINT') OR define('URLASSETSEXCHINT', URLAPPPUBLISHVRPC.'assets/publish/');
 defined('URLASSETSPLANESTECNICOS')      OR define('URLASSETSPLANESTECNICOS',URLAPPPUBLISHVRPC.'assets/publish/planesTecnicosFundamentales/');
-defined('URLASSETSCONSULTASPUBLICAS')      OR define('URLASSETSCONSULTASPUBLICAS', URLAPPPUBLISHVRPC.'/assets/publish/consultaspublicas/');
-
+defined('URLASSETSCONSULTASPUBLICAS')      OR define('URLASSETSCONSULTASPUBLICAS', URLAPPPUBLISHVRPC.'assets/publish/consultaspublicas/');
 defined('URLASSETSCNAF')      OR define('URLASSETSCNAF', URLAPPPUBLISHVRPC.'assets/publish/cuadronacional/');
+defined('URLASSETSINFORMESACT')      OR define('URLASSETSINFORMESACT', URLAPPPUBLISHVRPC.'assets/publish/proganualinformes/');
+defined('URLASSETRESINTER')      OR define('URLASSETRESINTER', URLAPPPUBLISHVRPC.'assets/publish/resolucioninterconexion/');

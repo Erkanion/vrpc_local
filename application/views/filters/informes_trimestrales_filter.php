@@ -38,7 +38,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-		$URLASSETSINFORMESACT = 'https://sert.ift.org.mx/tarifasVE/upload/files/proganualinformes/';
+		//$URLASSETSINFORMESACT = 'https://sert.ift.org.mx/tarifasVE/upload/files/proganualinformes/';
 		//$URLASSETSINFORMESACT = 'http://ucsweb.ift.org.mx/tarifasrpc/upload/files/proganualinformes/';
 
 		//$this->objClient = new SoapClient("http://10.34.144.82:7010/CftRtServices/CftRtServices?WSDL", array('cache_wsdl' => WSDL_CACHE_NONE,'trace' => 1, 'exceptions' => 1, 'connection_timeout' =>10));
@@ -88,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         	<h3><strong><?php echo getFieldValue($informeItem,'tituloInforme'); ?></strong></h3>
                            	<small>Folio de inscripción: <strong><?php echo getFieldValue($informeItem,'folioInscripcion'); ?></strong></small>
                            	<br/><small>Fecha de inscripción: <strong><?php echo getFieldValue($informeItem,'fechaInscripcion'); ?></strong></small>
-                           	<br/><a href="<?php echo $URLASSETSINFORMESACT. getFieldValue($informeItem,'urlFile'); ?>" target="_blank">Ver documento</a>
+                           	<br/><a href="<?php echo URLASSETSINFORMESACT. getFieldValue($informeItem,'urlFile'); ?>" target="_blank">Ver documento</a>
                            	</div>
 						</li>
 						

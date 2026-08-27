@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         	<div class="col-md-12 col-sm-12">
                             <h3>Planes <span>técnicos</span> fundamentales</h3>
 							<ul>
-                            	<li><div><a href="<?php echo URLASSETS?>upload/8041.pdf" target="_blank">
+                            	<li><div><a href="<?php echo URLASSETSPLANESTECNICOS?>8041.pdf" target="_blank">
                            	    <h3><strong>Plan Técnico Fundamental de Numeración</strong></h3>
                            	    <small>Folio de inscripción: <strong>8041</strong></small>
                            	    <br/><small>Fecha de inscripción: <strong>29/may/2013</strong></small>
@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                            	    </div>
                                 </li>
                                 
-                                <li><div><a href="<?php echo URLASSETS?>upload/8042.pdf" target="_blank">
+                                <li><div><a href="<?php echo URLASSETSPLANESTECNICOS?>8042.pdf" target="_blank">
                            	    <h3><strong>Plan Técnico Fundamental de Señalización</strong></h3>
                            	    <small>Folio de inscripción: <strong>8042</strong></small>
                            	    <br/><small>Fecha de inscripción: <strong>29/may/2013</strong></small>

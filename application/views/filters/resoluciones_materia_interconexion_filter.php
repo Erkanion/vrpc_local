@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         	<div class="col-md-12 col-sm-12">
                             <h3>Resoluciones en materia de <span>interconexión</span></h3>
 							<ul>
-                            	<li><div><a href="<?php echo URLASSETS?>upload/11783.pdf" target="_blank">
+                            	<li><div><a href="<?php echo URLASSETRESINTER?>11783.pdf" target="_blank">
                            	    <h3><strong>Resolución mediante la cual el Pleno del Comision Reguladora de Telecomunicaiones modifica y autoriza al agente económico preponderante los términos y condiciones del convenio marco de interconexión presentado por Teléfonos de México, S.A.B. de C.V. aplicacable del 1 de enero al 31 de diciembre de 2016.</strong></h3>
                            	    <small>Folio de inscripción: <strong>11783</strong></small>
                            	    <br/><small>Fecha de inscripción: <strong>14/mar/2016</strong></small>
@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                            	    </div>
                                 </li>
                                 
-                                <li><div><a href="<?php echo URLASSETS?>upload/11786.pdf" target="_blank">
+                                <li><div><a href="<?php echo URLASSETS?>11786.pdf" target="_blank">
                            	    <h3><strong>Resolución mediante la cual el Pleno del Comision Reguladora de Telecomunicaiones modifica y autoriza al agente económico preponderante los términos y condiciones del convenio marco de interconexión presentado por Teléfonos del Noroeste, S.A. de C.V. aplicacable del 1 de enero al 31 de diciembre de 2016.</strong></h3>
                            	    <small>Folio de inscripción: <strong>11786</strong></small>
                            	    <br/><small>Fecha de inscripción: <strong>14/mar/2016</strong></small>
@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                            	    </div>
                                 </li>
                                 
-                                <li><div><a href="<?php echo URLASSETS?>upload/11787.pdf" target="_blank">
+                                <li><div><a href="<?php echo URLASSETS?>11787.pdf" target="_blank">
                            	    <h3><strong>Resolución mediante la cual el Pleno del Comision Reguladora de Telecomunicaiones modifica y autoriza al agente económico preponderante los términos y condiciones del convenio marco de interconexión presentado por Radiomóvil Dipsa, S.A. de C.V. aplicacable del 1 de enero al 31 de diciembre de 2016.</strong></h3>
                            	    <small>Folio de inscripción: <strong>11787</strong></small>
                            	    <br/><small>Fecha de inscripción: <strong>14/mar/2016</strong></small>

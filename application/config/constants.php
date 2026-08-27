@@ -133,7 +133,6 @@ defined('URLAPP')      OR define('URLAPP', $hostInfo);
 defined('URLASSETS')      OR define('URLASSETS', URLAPPPUBLISHVRPC.'assets/');
 
 defined('URLSEARCHWS')      OR define('URLSEARCHWS', $ipws);
-defined('URLAPPSERT')      OR define('URLAPPSERT', $hostSert.'/tarifasVE/');
 #defined('URLAPPVISORSERT')      OR define('URLAPPVISORSERT', 'https://rpc.ift.org.mx/ift_visor/');
 defined('URLAPPVISORSERT')      OR define('URLAPPVISORSERT', $hostTarifas.'/ift_visor/');
 

@@ -38,7 +38,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 		//$URLASSETSPROGANUAL = 'http://ucsweb.ift.org.mx/tarifasrpc/upload/files/proganualinformes/';
-		$URLASSETSPROGANUAL = URLAPPSERT.'upload/files/proganualinformes/';
+		$URLASSETSPROGANUAL = URLAPPPUBLISHVRPC.'upload/files/proganualinformes/';
 
 		//$this->objClient = new SoapClient("http://10.34.144.82:7010/CftRtServices/CftRtServices?WSDL", array('cache_wsdl' => WSDL_CACHE_NONE,'trace' => 1, 'exceptions' => 1, 'connection_timeout' =>10));
 		$this->objClient = new SoapClient(URLSEARCHWS."?WSDL", array('cache_wsdl' => WSDL_CACHE_NONE,'trace' => 1, 'exceptions' => 1, 'connection_timeout' =>300));

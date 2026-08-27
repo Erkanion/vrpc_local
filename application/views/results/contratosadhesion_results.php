@@ -349,7 +349,7 @@ function count_Arr($object)
 				                    ) {
 
 				                        $url =
-				                            URLAPPSERT .
+				                            URLAPPPUBLISHVRPC .
 				                            "/upload/files/contratoadhesion/" .
 				                            $documento->dctm_docname;
 				                    }

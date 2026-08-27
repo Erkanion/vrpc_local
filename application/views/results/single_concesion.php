@@ -960,7 +960,7 @@ function format ( d ) {
     sFirstTable += '<table cellpadding="5" cellspacing="5" border="0" style="padding-left:50px;">';
     
     sFirstTable += '<tbody>';
-    sFirstTable += '<tr><td><a target="_blank" href="<?php echo URLAPPSERT;?>upload/files/convenios/'+d.fldFetDocument.docUrl+'" ><i class=" icon-doc"></i>Ver documento del convenio</a></td></tr>';
+    sFirstTable += '<tr><td><a target="_blank" href="<?php echo URLAPPPUBLISHVRPC;?>upload/files/convenios/'+d.fldFetDocument.docUrl+'" ><i class=" icon-doc"></i>Ver documento del convenio</a></td></tr>';
     
     console.log(d.fldFetDocument);
     sFirstTable += '</tbody>';

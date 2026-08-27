@@ -21,6 +21,9 @@ else if (domain.includes('qa')) {
 else if (domain.includes('dev')) {
     urlAppRpc = "https://rpcdev.crt.gob.mx/vrpc/";
 } 
+else if (domain.includes('crt')) {
+    urlAppRpc = "https://rpc.crt.gob.mx/vrpc/";
+}
 else {
     urlAppRpc = "https://rpc.ift.org.mx/vrpc/"; // producción
 }

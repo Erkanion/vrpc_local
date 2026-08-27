@@ -102,7 +102,12 @@ if (stripos($domain, 'dev') !== false) {
     $hostInfo = 'https://rpcdev.crt.gob.mx/vrpc/';
     $hostSert = 'https://sertdev.ift.org.mx/';
     $hostTarifas = 'https://tarifasdev.ift.org.mx/';
-    $ipws = 'http://172.17.42.113:9001/CftRtServices/CftRtServices';
+    $ipws = 'http://172.17.41.204:9001/CftRtServices/CftRtServices';
+} elseif (stripos($domain, 'crt') !== false) {
+    $hostInfo = 'https://rpc.crt.gob.mx/vrpc/';
+    $hostSert = 'https://sertqa.ift.org.mx/';
+    $hostTarifas = 'https://tarifasqa.ift.org.mx/';
+    $ipws = 'http://172.17.42.125:9001/CftRtServices/CftRtServices';
 } elseif (stripos($domain, 'qa') !== false) {
     $hostInfo = 'https://rpcqa.crt.gob.mx/vrpc/';
     $hostSert = 'https://sertqa.ift.org.mx/';
@@ -137,15 +142,19 @@ defined('URLSEARCHWS')      OR define('URLSEARCHWS', $ipws);
 defined('URLAPPVISORSERT')      OR define('URLAPPVISORSERT', $hostTarifas.'/ift_visor/');
 
 
-defined('URLASSETSMODELOSINT')      OR define('URLASSETSMODELOSINT', URLAPPPUBLISHVRPC.'upload/files/modelointerconexion/');
-defined('URLASSETSESPACIOS')      OR define('URLASSETSESPACIOS', URLAPPPUBLISHVRPC.'upload/files/tarifasespacios/');
-defined('URLASSETSESTRUCTURA')      OR define('URLASSETSESTRUCTURA', URLAPPPUBLISHVRPC.'upload/files/estructuraaccionaria/');
-defined('URLASSETSINTERNACIONAL')      OR define('URLASSETSINTERNACIONAL', URLAPPPUBLISHVRPC.'upload/files/convinternacional/');
-defined('URLASSETSEMBARGOS')      OR define('URLASSETSEMBARGOS', URLAPPPUBLISHVRPC.'upload/files/gravamenes/');
+defined('URLASSETSMODELOSINT')      OR define('URLASSETSMODELOSINT', URLAPPPUBLISHVRPC.'assets/publish/modelointerconexion/');
+defined('URLASSETSESPACIOS')      OR define('URLASSETSESPACIOS', URLAPPPUBLISHVRPC.'assets/publish/tarifasespacios/');
+defined('URLASSETSESTRUCTURA')      OR define('URLASSETSESTRUCTURA', URLAPPPUBLISHVRPC.'assets/publish/estructuraaccionaria/');
+defined('URLASSETSINTERNACIONAL')      OR define('URLASSETSINTERNACIONAL', URLAPPPUBLISHVRPC.'assets/publish/convinternacional/');
+defined('URLASSETSEMBARGOS')      OR define('URLASSETSEMBARGOS', URLAPPPUBLISHVRPC.'assets/publish/gravamenes/');
 defined('URLASSETSCRUCES')      OR define('URLASSETSCRUCES', URLAPPPUBLISHVRPC.'assets/publish/crucesfronterizos/');
-defined('URLASSETSCODIGOS')      OR define('URLASSETSCODIGOS', URLAPPPUBLISHVRPC.'upload/files/codigoetica/');
-defined('URLASSETSDEFENSORESA')      OR define('URLASSETSDEFENSORESA', URLAPPPUBLISHVRPC.'upload/files/defensoresaudiencia/');
-defined('URLASSETSOFERTAS')      OR define('URLASSETSOFERTAS', URLAPPPUBLISHVRPC.'upload/files/ofertapublica/');
-defined('URLASSETSOFERTAP')      OR define('URLASSETSOFERTAP', URLAPPPUBLISHVRPC.'upload/files/ofertapublica/');
-defined('URLASSETSDONACIONES')      OR define('URLASSETSDONACIONES', $hostSert.'/tarifasrpc/upload/files/criteriosadoptados/');
-defined('URLASSETSEXCHINT') OR define('URLASSETSEXCHINT', URLAPPPUBLISHVRPC.'upload/files/');
+defined('URLASSETSCODIGOS')      OR define('URLASSETSCODIGOS', URLAPPPUBLISHVRPC.'assets/publish/codigoetica/');
+defined('URLASSETSDEFENSORESA')      OR define('URLASSETSDEFENSORESA', URLAPPPUBLISHVRPC.'assets/publish/defensoresaudiencia/');
+defined('URLASSETSOFERTAS')      OR define('URLASSETSOFERTAS', URLAPPPUBLISHVRPC.'assets/publish/ofertapublica/');
+defined('URLASSETSOFERTAP')      OR define('URLASSETSOFERTAP', URLAPPPUBLISHVRPC.'assets/publish/ofertapublica/');
+defined('URLASSETSDONACIONES')      OR define('URLASSETSDONACIONES', $hostSert.'/tarifasrpc/assets/publish/criteriosadoptados/');
+defined('URLASSETSEXCHINT') OR define('URLASSETSEXCHINT', URLAPPPUBLISHVRPC.'assets/publish/');
+defined('URLASSETSPLANESTECNICOS')      OR define('URLASSETSPLANESTECNICOS',URLAPPPUBLISHVRPC.'assets/publish/planesTecnicosFundamentales/');
+defined('URLASSETSCONSULTASPUBLICAS')      OR define('URLASSETSCONSULTASPUBLICAS', URLAPPPUBLISHVRPC.'/assets/publish/consultaspublicas/');
+
+defined('URLASSETSCNA')      OR define('URLASSETSCNA', URLAPPPUBLISHVRPC.'/assets/publish/cuadronacional/');

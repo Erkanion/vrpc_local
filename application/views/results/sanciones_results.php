@@ -111,7 +111,7 @@ function getFieldValue($section, $field, $defaultValue = '') {
 					</td>
 				</tr>
 				<td>
-					<i class=" icon-doc"></i><a href="<?php echo URLAPPPUBLISH;?>publish/pdfs/informes/<?php echo $documentPdf;?>" target="_blank">Ver documento</a>
+					<i class=" icon-doc"></i><a href="<?php echo URLAPPPUBLISHVRPC;?>publish/pdfs/informes/<?php echo $documentPdf;?>" target="_blank">Ver documento</a>
 				</td>
 			</tr>
 		</tbody>

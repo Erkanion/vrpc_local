@@ -8,20 +8,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if (!function_exists('getTramiteConfigs')) {
     function getTramiteConfigs() {
         return array(
-            1  => array('folder' => 'contratoadhesion',      'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
-            2  => array('folder' => 'nombrecomercial',       'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
-            3  => array('folder' => 'tarifasespacios',       'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
-            5  => array('folder' => 'avisodomicilio',        'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
-            8  => array('folder' => 'puntosinterconexion',   'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
-            12 => array('folder' => 'estructuraaccionaria',  'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
-            13 => array('folder' => 'estructuraaccionaria',  'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
-            14 => array('folder' => 'convenios',             'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
-            15 => array('folder' => 'gravamenes',            'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
+            1  => array('folder' => 'contratoadhesion',      'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
+            2  => array('folder' => 'nombrecomercial',       'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
+            3  => array('folder' => 'tarifasespacios',       'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
+            5  => array('folder' => 'avisodomicilio',        'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
+            8  => array('folder' => 'puntosinterconexion',   'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
+            12 => array('folder' => 'estructuraaccionaria',  'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
+            13 => array('folder' => 'estructuraaccionaria',  'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
+            14 => array('folder' => 'convenios',             'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
+            15 => array('folder' => 'gravamenes',            'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
             16 => array('folder' => 'pdfs',                  'base_url' => URLAPP,                          'is_direct' => true),
-            17 => array('folder' => 'convinternacional',     'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
-            18 => array('folder' => 'contratosArrenFrec',    'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
-            19 => array('folder' => 'cesionderechos',        'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
-            38 => array('folder' => 'estructuraaccionaria',  'base_url' => URLAPPPUBLISH . 'upload/files/', 'is_direct' => false),
+            17 => array('folder' => 'convinternacional',     'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
+            18 => array('folder' => 'contratosArrenFrec',    'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
+            19 => array('folder' => 'cesionderechos',        'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
+            38 => array('folder' => 'estructuraaccionaria',  'base_url' => URLAPPPUBLISHVRPC . 'upload/files/', 'is_direct' => false),
         );
     }
 }

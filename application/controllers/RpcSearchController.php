@@ -394,7 +394,7 @@ class RpcSearchController extends CI_Controller {
 			show_404();
 		}
 		
-		$remoteUrl = URLAPPPUBLISH . 'upload/files/' . $filePath;
+		$remoteUrl = URLAPPPUBLISHVRPC . 'upload/files/' . $filePath;
 		//echo $remoteUrl;die();
 		header('Content-Type: application/pdf');
 		header('Content-Disposition: inline; filename="' . basename($filePath) . '"');

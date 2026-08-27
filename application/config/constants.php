@@ -128,8 +128,6 @@ if (stripos($domain, 'dev') !== false) {
 
 
 /* environment variables */
-defined('URLAPPPUBLISH')      OR define('URLAPPPUBLISH', $hostSert.'/tarifasVE/');
-
 defined('URLAPPPUBLISHVRPC')      OR define('URLAPPPUBLISHVRPC', $hostInfo);
 defined('URLAPP')      OR define('URLAPP', $hostInfo);
 defined('URLASSETS')      OR define('URLASSETS', URLAPPPUBLISHVRPC.'assets/');
@@ -140,15 +138,15 @@ defined('URLAPPSERT')      OR define('URLAPPSERT', $hostSert.'/tarifasVE/');
 defined('URLAPPVISORSERT')      OR define('URLAPPVISORSERT', $hostTarifas.'/ift_visor/');
 
 
-defined('URLASSETSMODELOSINT')      OR define('URLASSETSMODELOSINT', URLAPPPUBLISH.'upload/files/modelointerconexion/');
-defined('URLASSETSESPACIOS')      OR define('URLASSETSESPACIOS', URLAPPPUBLISH.'upload/files/tarifasespacios/');
-defined('URLASSETSESTRUCTURA')      OR define('URLASSETSESTRUCTURA', URLAPPPUBLISH.'upload/files/estructuraaccionaria/');
-defined('URLASSETSINTERNACIONAL')      OR define('URLASSETSINTERNACIONAL', URLAPPPUBLISH.'upload/files/convinternacional/');
-defined('URLASSETSEMBARGOS')      OR define('URLASSETSEMBARGOS', URLAPPPUBLISH.'upload/files/gravamenes/');
+defined('URLASSETSMODELOSINT')      OR define('URLASSETSMODELOSINT', URLAPPPUBLISHVRPC.'upload/files/modelointerconexion/');
+defined('URLASSETSESPACIOS')      OR define('URLASSETSESPACIOS', URLAPPPUBLISHVRPC.'upload/files/tarifasespacios/');
+defined('URLASSETSESTRUCTURA')      OR define('URLASSETSESTRUCTURA', URLAPPPUBLISHVRPC.'upload/files/estructuraaccionaria/');
+defined('URLASSETSINTERNACIONAL')      OR define('URLASSETSINTERNACIONAL', URLAPPPUBLISHVRPC.'upload/files/convinternacional/');
+defined('URLASSETSEMBARGOS')      OR define('URLASSETSEMBARGOS', URLAPPPUBLISHVRPC.'upload/files/gravamenes/');
 defined('URLASSETSCRUCES')      OR define('URLASSETSCRUCES', URLAPPPUBLISHVRPC.'assets/publish/crucesfronterizos/');
-defined('URLASSETSCODIGOS')      OR define('URLASSETSCODIGOS', URLAPPPUBLISH.'upload/files/codigoetica/');
-defined('URLASSETSDEFENSORESA')      OR define('URLASSETSDEFENSORESA', URLAPPPUBLISH.'upload/files/defensoresaudiencia/');
-defined('URLASSETSOFERTAS')      OR define('URLASSETSOFERTAS', URLAPPPUBLISH.'upload/files/ofertapublica/');
-defined('URLASSETSOFERTAP')      OR define('URLASSETSOFERTAP', URLAPPPUBLISH.'upload/files/ofertapublica/');
+defined('URLASSETSCODIGOS')      OR define('URLASSETSCODIGOS', URLAPPPUBLISHVRPC.'upload/files/codigoetica/');
+defined('URLASSETSDEFENSORESA')      OR define('URLASSETSDEFENSORESA', URLAPPPUBLISHVRPC.'upload/files/defensoresaudiencia/');
+defined('URLASSETSOFERTAS')      OR define('URLASSETSOFERTAS', URLAPPPUBLISHVRPC.'upload/files/ofertapublica/');
+defined('URLASSETSOFERTAP')      OR define('URLASSETSOFERTAP', URLAPPPUBLISHVRPC.'upload/files/ofertapublica/');
 defined('URLASSETSDONACIONES')      OR define('URLASSETSDONACIONES', $hostSert.'/tarifasrpc/upload/files/criteriosadoptados/');
-defined('URLASSETSEXCHINT') OR define('URLASSETSEXCHINT', URLAPPPUBLISH.'upload/files/');
+defined('URLASSETSEXCHINT') OR define('URLASSETSEXCHINT', URLAPPPUBLISHVRPC.'upload/files/');

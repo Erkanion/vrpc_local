@@ -102,12 +102,12 @@ if (stripos($domain, 'dev') !== false) {
     $hostInfo = 'https://rpcdev.crt.gob.mx/vrpc/';
     $hostSert = 'https://sertdev.ift.org.mx/';
     $hostTarifas = 'https://tarifasdev.ift.org.mx/';
-    $ipws = 'http://172.17.41.204:9001/CftRtServices/CftRtServices';
+    $ipws = 'http://172.17.42.113:9001/CftRtServices/CftRtServices';
 } elseif (stripos($domain, 'crt') !== false) {
     $hostInfo = 'https://rpc.crt.gob.mx/vrpc/';
     $hostSert = 'https://sertqa.ift.org.mx/';
     $hostTarifas = 'https://tarifasqa.ift.org.mx/';
-    $ipws = 'http://172.17.42.125:9001/CftRtServices/CftRtServices';
+    $ipws = 'http://172.17.41.204:9001/CftRtServices/CftRtServices';
 } elseif (stripos($domain, 'qa') !== false) {
     $hostInfo = 'https://rpcqa.crt.gob.mx/vrpc/';
     $hostSert = 'https://sertqa.ift.org.mx/';

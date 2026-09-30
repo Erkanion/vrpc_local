@@ -89,7 +89,7 @@ $this->load->view('includes_rpc');
     <!-- Mobile menu overlay mask -->
 
 <?php
-$meses = array(1=>'enero', 2=>'febrero', 3=>'marzo', 4=>'abril', 5=>'mayo', 6=>'junio', 7=>'julio', 8=>'agosto', 9=>'septiembre', 10=>'octubre', 11=>'noviembre', 12=>'diciembre');
+$meses = array(1=>'enero', 2=>'febrero', 3=>'marzo', 4=>'abril', 5=>'mayo', 6=>'junio', 7=>'agosto', 8=>'agosto', 9=>'septiembre', 10=>'octubre', 11=>'noviembre', 12=>'diciembre');
 $fechaActual = date('j') . ' de ' . $meses[(int) date('n')] . ' de ' . date('Y');
 $this->load->view('header');
 ?>
@@ -157,11 +157,11 @@ $this->load->view('header');
                         <div class="pricing-table-features">
                             <p><strong>Infraestructura de estaciones</p>
                             <p><strong> de radio AM y FM</strong></p>
-                            <p>al 25 de julio de 2026</p>
+                            <p>al 25 de agosto de 2026</p>
                         </div>
                         
                         <div class="pricing-table-sign-up">
-                            <a href="/vrpc/assets/publish/uploads/infraestructura/01_infraestructura_AM_FM_250726.xlsx" class="btn_1" target="_blank">Descargar</a>
+                            <a href="/vrpc/assets/publish/uploads/infraestructura/01_infraestructura_AM_FM_250826.xlsx" class="btn_1" target="_blank">Descargar</a>
                         </div>
                     </div><!-- End pricing-table-->
                 </div><!-- End col-md-3 -->
@@ -198,11 +198,11 @@ $this->load->view('header');
                         <div class="pricing-table-features">
                             <p><strong>Infraestructura de estaciones</p>
                             <p><strong> de TV</strong></p>
-                            <p>al 25 de julio de 2026</p>
+                            <p>al 25 de agosto de 2026</p>
                         </div>
                         
                         <div class="pricing-table-sign-up">
-                            <a href="/vrpc/assets/publish/uploads/infraestructura/02_infraestructura_TV_250726 1.xlsx" class="btn_1" target="_blank">Descargar</a>
+                            <a href="/vrpc/assets/publish/uploads/infraestructura/02_infraestructura_TV_250826.xlsx" class="btn_1" target="_blank">Descargar</a>
                         </div>
                     </div><!-- End pricing-table-->
                 </div><!-- End col-md-3 -->
@@ -223,11 +223,11 @@ $this->load->view('header');
                         <div class="pricing-table-features">
                             <p><strong>Base de datos completa</p>
                             <p><strong> de concesiones, autorizaciones y permisos</strong></p>
-                            <p>al 25 de julio de 2026</p>
+                            <p>al 25 de agosto de 2026</p>
                         </div>
                         
                         <div class="pricing-table-sign-up">
-                            <a href="/vrpc/assets/publish/uploads/concesiones/03_concesiones_permisos_autorizaciones_250726 3.xlsx" class="btn_1" target="_blank">Base de datos</a>
+                            <a href="/vrpc/assets/publish/uploads/concesiones/03_concesiones_permisos_autorizaciones_250826.xlsx" class="btn_1" target="_blank">Base de datos</a>
                         </div>
                     </div><!-- End pricing-table-->
                 </div><!-- End col-md-3 -->
@@ -287,11 +287,11 @@ $this->load->view('header');
                             <p><strong>Base de datos completa</p>
                             <p><strong> de tarifas de servicios móviles</p>
                             <p><strong> de 2015 a 2025</strong></p>
-                            <p>al 26 de julio de 2026</p>
+                            <p>al 26 de agosto de 2026</p>
                         </div>
                         
                         <div class="pricing-table-sign-up">
-                            <a href="/vrpc/assets/publish/uploads/tarifas_telecom/05_tarifas_servicios_moviles_260726.xlsx" class="btn_1" target="_blank">Base de datos</a>
+                            <a href="/vrpc/assets/publish/uploads/tarifas_telecom/05_tarifas_servicios_moviles_250826.xlsx" class="btn_1" target="_blank">Base de datos</a>
                         </div>
                     </div>
                 
@@ -308,11 +308,11 @@ $this->load->view('header');
                             <p><strong>Base de datos completa</p>
                             <p><strong> de tarifas de servicios diversos</p>
                             <p><strong> de 2015 a 2025</strong></p>
-                            <p>al 25 de julio de 2026</p>
+                            <p>al 25 de agosto de 2026</p>
                         </div>
                         
                         <div class="pricing-table-sign-up">
-                            <a href="/vrpc/assets/publish/uploads/tarifas_telecom/06_tarifas_servicios_diversos_250726.xlsx" class="btn_1" target="_blank">Base de datos</a>
+                            <a href="/vrpc/assets/publish/uploads/tarifas_telecom/06_tarifas_servicios_diversos_250826.xlsx" class="btn_1" target="_blank">Base de datos</a>
                         </div>
                     </div>
                 </div>
@@ -361,7 +361,7 @@ $this->load->view('header');
                 
                 
                 <div class="pricing-table-sign-up">
-                    <a href="/vrpc/assets/publish/uploads/defensores_codigos/08_codigo_etica_250726.xlsx" class="btn_1" target="_blank">Base de datos</a>
+                    <a href="/vrpc/assets/publish/uploads/defensores_codigos/08_codigo_etica_250826.xlsx" class="btn_1" target="_blank">Base de datos</a>
                 </div>
                 
             </div><!-- End pricing-table-->
@@ -377,11 +377,11 @@ $this->load->view('header');
                 <div class="pricing-table-features">
                     <p><strong>Base de datos completa</p>
                     <p><strong> de defensores de audiencias</strong></p>
-                    <p>al 25 de julio de 2026</p>
+                    <p>al 25 de agosto de 2026</p>
                 </div>
                 
                 <div class="pricing-table-sign-up">
-                    <a href="/vrpc/assets/publish/uploads/defensores_codigos/09_defensor_audiencias_250726.xlsx" class="btn_1" target="_blank">Base de datos</a>
+                    <a href="/vrpc/assets/publish/uploads/defensores_codigos/09_defensor_audiencias_250826.xlsx" class="btn_1" target="_blank">Base de datos</a>
                 </div>
                 
             </div><!-- End pricing-table-->
@@ -397,11 +397,11 @@ $this->load->view('header');
                 <div class="pricing-table-features">
                     <p><strong>Base de datos completa</p>
                     <p><strong> de convenios</strong></p>
-                    <p>al 25 de julio de 2026</p>
+                    <p>al 25 de agosto de 2026</p>
                 </div>
                 
                 <div class="pricing-table-sign-up">
-                    <a href="/vrpc/assets/publish/uploads/concesiones/10_convenios_250726.xlsx" class="btn_1" target="_blank">Base de datos</a>
+                    <a href="/vrpc/assets/publish/uploads/concesiones/10_convenios_250826.xlsx" class="btn_1" target="_blank">Base de datos</a>
                 </div>
                 
             </div><!-- End pricing-table-->
@@ -422,12 +422,12 @@ $this->load->view('header');
                 <div class="pricing-table-features">
                     <p><strong>Base de datos completa</p>
                     <p><strong> de tarifas de red mayorista</strong></p>
-                    <p>al 25 de julio de 2026</p>
+                    <p>al 25 de agosto de 2026</p>
                 </div>
                 
                 
                 <div class="pricing-table-sign-up">
-                    <a href="/vrpc/assets/publish/uploads/concesiones/11_tarifas_red_mayorista_250726.xlsx" class="btn_1" target="_blank">Base de datos</a>
+                    <a href="/vrpc/assets/publish/uploads/concesiones/11_tarifas_red_mayorista_250826.xlsx" class="btn_1" target="_blank">Base de datos</a>
                 </div>
                 
             </div><!-- End pricing-table-->
@@ -442,11 +442,11 @@ $this->load->view('header');
                 <div class="pricing-table-features">
                     <p><strong>Base de datos completa</p>
                     <p><strong> de resoluciones de interconexión</strong></p>
-                    <p>al 25 de julio de 2026</p>
+                    <p>al 25 de agosto de 2026</p>
                 </div>
                 
                 <div class="pricing-table-sign-up">
-                    <a href="/vrpc/assets/publish/uploads/concesiones/12_resoluciones_interconexion_250726.xlsx" class="btn_1" target="_blank">Base de datos</a>
+                    <a href="/vrpc/assets/publish/uploads/concesiones/12_resoluciones_interconexion_250826.xlsx" class="btn_1" target="_blank">Base de datos</a>
                 </div>
             </div>
         </div>
@@ -461,11 +461,11 @@ $this->load->view('header');
                 <div class="pricing-table-features">
                     <p><strong>Base de datos completa</p>
                     <p><strong> de radioaficionados</strong></p>
-                    <p>al 25 de julio de 2026</p>
+                    <p>al 25 de agosto de 2026</p>
                 </div>
                 
                 <div class="pricing-table-sign-up">
-                    <a href="/vrpc/assets/publish/uploads/concesiones/13_radioaficionados_250726.xlsx" class="btn_1" target="_blank">Base de datos</a>
+                    <a href="/vrpc/assets/publish/uploads/concesiones/13_radioaficionados_250826.xlsx" class="btn_1" target="_blank">Base de datos</a>
                 </div>
             </div>
         </div>

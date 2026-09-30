@@ -93,7 +93,7 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 $domain = $_SERVER['HTTP_HOST'] ?? ($_SERVER['SERVER_NAME'] ?? '');
 
 /* Base URL por defecto (producción) */
-$hostInfo = 'https://rpc.ift.org.mx/vrpc/';
+$hostInfo = 'https://rpc.crt.gob.mx/vrpc/';
 $hostSert = 'https://sert.ift.org.mx/';
 $hostTarifas = 'https://tarifas.ift.org.mx/';
 $ipws = 'http://172.17.41.204:9001/';
@@ -114,7 +114,7 @@ if (stripos($domain, 'dev') !== false) {
     $hostTarifas = 'https://tarifasqa.ift.org.mx/';
     $ipws = 'http://172.17.42.125:9001/CftRtServices/CftRtServices';
 } elseif (stripos($domain, 'uat') !== false) {
-    $hostInfo = 'https://rpc-uat.crt.gob.mx/vrpc/';
+    $hostInfo = 'https://rpc-uat.crt.gob.mx/vrpc-uat/';
     $hostSert = 'https://sertqa.ift.org.mx/';
     $hostTarifas = 'https://tarifasqa.ift.org.mx/';
     $ipws = 'http://172.17.42.125:9003/CftRtServicesUAT/CftRtServices';

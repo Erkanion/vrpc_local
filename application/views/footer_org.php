@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <ul>
                         <li><a href="https://tarifas.ift.org.mx/ift_visor/" target="_blank">Buscador de tarifas</a></li>
                         <li><a href="http://apps.ift.org.mx/cumplimientoStp/secured/adminficum.faces" target="_blank">Buscador de resoluciones del Pleno</a></li>
-                        <li><a href="http://www.ift.org.mx/" target="_blank">Portal del CRT</a></li>
+                        <li><a href="https://www.gob.mx/crt" target="_blank">Portal del CRT</a></li>
                     </ul>
                 </div>
               

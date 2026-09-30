@@ -13,7 +13,7 @@ if (domain.includes('vrpclocal')) {
     urlAppRpc = "http://localhost:8080/VRPC/";
 }
 else if (domain.includes('uat')) {
-    urlAppRpc = "https://rpc-uat.crt.gob.mx/vrpc/";
+    urlAppRpc = "https://rpc-uat.crt.gob.mx/vrpc-uat/";
 }
 else if (domain.includes('qa')) {
     urlAppRpc = "https://rpcqa.crt.gob.mx/vrpc/";
@@ -21,11 +21,8 @@ else if (domain.includes('qa')) {
 else if (domain.includes('dev')) {
     urlAppRpc = "https://rpcdev.crt.gob.mx/vrpc/";
 } 
-else if (domain.includes('crt')) {
-    urlAppRpc = "https://rpc.crt.gob.mx/vrpc/";
-}
 else {
-    urlAppRpc = "https://rpc.ift.org.mx/vrpc/"; // producción
+    urlAppRpc = "https://rpc.crt.gob.mx/vrpc/"; // producción
 }
 
 function fixUrl(reqPage, url) {

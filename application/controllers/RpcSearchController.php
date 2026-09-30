@@ -11,6 +11,66 @@ class RpcSearchController extends CI_Controller {
 		error_log($message . PHP_EOL, 3, $logPath);
 	}
 
+	/**
+	 * Return a trimmed scalar POST value and reject structured input.
+	 *
+	 * Search parameters are ultimately sent to a legacy SOAP service.  Keeping
+	 * the validation at this trust boundary prevents user-controlled SQL syntax
+	 * from ever reaching that service.
+	 */
+	private function validatedPost($field, $maxLength, $pattern = null) {
+		$value = $this->input->post($field);
+		if ($value === null) {
+			return '';
+		}
+		if (!is_string($value)) {
+			throw new InvalidArgumentException('Invalid value for ' . $field);
+		}
+
+		$value = trim($value);
+		if (strlen($value) > $maxLength || ($value !== '' && $pattern !== null && !preg_match($pattern, $value))) {
+			throw new InvalidArgumentException('Invalid value for ' . $field);
+		}
+
+		return $value;
+	}
+
+	private function validatedChoice($field, $allowedValues) {
+		$value = $this->validatedPost($field, 10, '/^[A-Z]+$/');
+		if ($value !== '' && !in_array($value, $allowedValues, true)) {
+			throw new InvalidArgumentException('Invalid value for ' . $field);
+		}
+
+		return $value;
+	}
+
+	private function validatedJsonChoiceList($field, $allowedValues) {
+		$rawValue = $this->validatedPost($field, 512);
+		if ($rawValue === '' || $rawValue === '""') {
+			return '';
+		}
+
+		$values = json_decode($rawValue, true);
+		if (!is_array($values) || count($values) > count($allowedValues)) {
+			throw new InvalidArgumentException('Invalid value for ' . $field);
+		}
+		foreach ($values as $value) {
+			if (!is_string($value) || !in_array($value, $allowedValues, true)) {
+				throw new InvalidArgumentException('Invalid value for ' . $field);
+			}
+		}
+
+		return $values;
+	}
+
+	private function invalidSearchRequest($exception) {
+		$this->output
+			->set_status_header(400)
+			->set_content_type('application/json')
+			->set_output(json_encode(array('error' => 'Los parametros de busqueda no son validos.')));
+		$this->writeLog('[WARN] Invalid search request: ' . $exception->getMessage());
+	}
+
     function __construct() {
         parent::__construct();
         //$this->load->model('searchdb', '', TRUE);        
@@ -564,14 +624,19 @@ class RpcSearchController extends CI_Controller {
 	
 	/* Sanciones */
 	public function searchSanciones() {
-		$dataInput = array('searchSancionesParams' => array(
-			'strDescSancion' => trim($this->input->post('strDescSancion')),
-            'strBpSancion' => trim($this->input->post('strBpSancion')),
-			'strSancionFecIni' => trim($this->input->post('strSancionFecIni')),
-			'strSancionFecFin' => trim($this->input->post('strSancionFecFin')),
-			'strSancionFolio' => trim($this->input->post('strSancionFolio')),
-			'strTipoInforme' => trim($this->input->post('strTipoInforme'))
-        ) );
+		try {
+			$dataInput = array('searchSancionesParams' => array(
+				'strDescSancion' => $this->validatedPost('strDescSancion', 150, '/^[\pL\pN .,_()&\/-]+$/u'),
+				'strBpSancion' => $this->validatedPost('strBpSancion', 30, '/^[A-Za-z0-9._\/-]+$/'),
+				'strSancionFecIni' => $this->validatedPost('strSancionFecIni', 10, '/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/[0-9]{4}$/'),
+				'strSancionFecFin' => $this->validatedPost('strSancionFecFin', 10, '/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/[0-9]{4}$/'),
+				'strSancionFolio' => $this->validatedPost('strSancionFolio', 50, '/^[A-Za-z0-9._\/-]+$/'),
+				'strTipoInforme' => $this->validatedChoice('strTipoInforme', array('ANY', 'I', 'A', 'S'))
+			) );
+		} catch (InvalidArgumentException $e) {
+			$this->invalidSearchRequest($e);
+			return;
+		}
 		
 		
 		//$sancionesList = $this->searchdb->searchSanciones($dataInput);
@@ -716,17 +781,24 @@ class RpcSearchController extends CI_Controller {
 
 /* permisos de radiocomunicacion */
 public function searchPermisosRadiocomunicacion() {
-		
-		$arrParameters_Search = array('searchParams' => array(
-			'txtBPConcesionario' => trim($this->input->post('txtBPConcesionario')),
-            'strConcesionario' => trim($this->input->post('strConcesionario')),
-			'strServicios' => json_decode($this->input->post('strServicios')),
-			'strFET' => trim($this->input->post('strFET')),
-			'strCobertura' => json_decode($this->input->post('strCobertura')),
-			'strExpediente' => trim($this->input->post('strExpediente')),
-			'strCanal' => trim($this->input->post('strRangoSegmentosFrom')),
-			'strTipo' => trim($this->input->post('strRangoSegmentosTo'))
-        ) );
+		try {
+			$arrParameters_Search = array('searchParams' => array(
+				'txtBPConcesionario' => $this->validatedPost('txtBPConcesionario', 30, '/^[A-Za-z0-9._\/-]+$/'),
+				'strConcesionario' => $this->validatedPost('strConcesionario', 150, '/^[\pL\pN .,_()&\/-]+$/u'),
+				'strServicios' => $this->validatedJsonChoiceList('strServicios', array(
+					'RADIOCOMUNICACION DE SERVICIO PRIVADO',
+					'RADIOTELEFONICO DE SERVICIO PRIVADO'
+				)),
+				'strFET' => $this->validatedPost('strFET', 50, '/^[A-Za-z0-9._\/-]+$/'),
+				'strCobertura' => $this->validatedJsonChoiceList('strCobertura', array_map('strval', range(1, 32))),
+				'strExpediente' => $this->validatedPost('strExpediente', 50, '/^[A-Za-z0-9 ._\/-]+$/'),
+				'strCanal' => $this->validatedPost('strRangoSegmentosFrom', 30, '/^[0-9., -]+$/'),
+				'strTipo' => $this->validatedPost('strRangoSegmentosTo', 30, '/^[0-9., -]+$/')
+			) );
+		} catch (InvalidArgumentException $e) {
+			$this->invalidSearchRequest($e);
+			return;
+		}
 		
 		$concesionesList = null;
 		try {

@@ -396,15 +396,70 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </li>
 
 								<li><div>
-                           	    <h3><strong>Modelo de enlaces dedicados para 2025.</strong></h3>
-                           	    Folio de inscripción: <strong>86951</strong>
-                           	    <br/>Fecha de inscripción: <strong>15/ene/2025</strong>
-                           	    <br/><a href="<?php echo URLASSETSMODELOSINT?>86951_250228161421_8202.pdf" target="_blank">Ver constancia</a>
+                           	    <h3><strong>MODELO DE MERCADO 2027-2029.</strong></h3>
+                           	    Folio de inscripción: <strong>102895</strong>
+                           	    <br/>Fecha de inscripción: <strong>16/07/2026</strong>
+                           	    <br/><a href="<?php echo URLASSETSMODELOSINT?>102895_260722233701_9760.pdf" target="_blank">Ver constancia</a>
                            	    </div>
                                 </li>
+<li><div>
+    <h3><strong>MODELO DE ENLACES DEDICADOS PARA 2025</strong></h3>
+    Folio de inscripción: <strong>86951</strong>
+    <br/>Fecha de inscripción: <strong>16/07/2026</strong>
+    <br/><a href="<?php echo URLASSETSMODELOSINT?>86951_250228161421_8202.pdf" target="_blank">Ver constancia</a>
+</div></li>
+                                <li><div>
+    <h3><strong>MODELO FIJO ES 2027-2029</strong></h3>
+    Folio de inscripción: <strong>102656</strong>
+    <br/>Fecha de inscripción: <strong>08/07/2026</strong>
+    <br/><a href="<?php echo URLASSETSMODELOSINT?>102656_260711003652_7670.pdf" target="_blank">Ver constancia</a>
+</div></li>
 
+<li><div>
+    <h3><strong>MODELO FIJO AEP 2027-2029</strong></h3>
+    Folio de inscripción: <strong>102657</strong>
+    <br/>Fecha de inscripción: <strong>08/07/2026</strong>
+    <br/><a href="<?php echo URLASSETSMODELOSINT?>102657_260711003752_1173.pdf" target="_blank">Ver constancia</a>
+</div></li>
+
+<li><div>
+    <h3><strong>MODELO DE INTERCONEXIÓN CRUZADA 2027-2029</strong></h3>
+    Folio de inscripción: <strong>102658</strong>
+    <br/>Fecha de inscripción: <strong>08/07/2026</strong>
+    <br/><a href="<?php echo URLASSETSMODELOSINT?>102658_260711003823_5187.pdf" target="_blank">Ver constancia</a>
+</div></li>
+
+
+
+<li><div>
+    <h3><strong>MODELO MÓVIL CS 2027-2029</strong></h3>
+    Folio de inscripción: <strong>102896</strong>
+    <br/>Fecha de inscripción: <strong>16/07/2026</strong>
+    <br/><a href="<?php echo URLASSETSMODELOSINT?>102896_260722233725_691.pdf" target="_blank">Ver constancia</a>
+</div></li>
+
+<li><div>
+    <h3><strong>MODELO MÓVIL AEP 2027-2029</strong></h3>
+    Folio de inscripción: <strong>102897</strong>
+    <br/>Fecha de inscripción: <strong>16/07/2026</strong>
+    <br/><a href="<?php echo URLASSETSMODELOSINT?>102897_260722233759_2767.pdf" target="_blank">Ver constancia</a>
+</div></li>
+
+<li><div>
+    <h3><strong>MODELO DE COUBICACIÓN 2027-2029</strong></h3>
+    Folio de inscripción: <strong>102898</strong>
+    <br/>Fecha de inscripción: <strong>16/07/2026</strong>
+    <br/><a href="<?php echo URLASSETSMODELOSINT?>102898_260722233817_3994.pdf" target="_blank">Ver constancia</a>
+</div></li>
+
+  <li>
+                                    <div><a href="http://www.ift.org.mx/politica-regulatoria/modelos-de-costos" target="_blank">Micrositio web de Modelos de costos (histórico IFT)</a></div>
+                                </li>
                                 <li>
-                          			<div><a href="http://www.ift.org.mx/politica-regulatoria/modelos-de-costos" target="_blank">Micrositio web de Modelos de costos</a></div>
+                                    <div><a href="https://portal.crt.gob.mx/modelos-de-costos" target="_blank">Micrositio web de Modelos de costos CRT</a></div>
+                                </li>
+                                <li style="visibility: hidden;">
+                          			<div><a href="http://www.ift.org.mx/politica-regulatoria/modelos-de-costos" target="_blank">Micrositio web de Modelos de costos (histórico IFT)</a></div>
                         		</li>
                                 
                             </ul>

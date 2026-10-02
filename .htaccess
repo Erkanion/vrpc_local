@@ -1,4 +1,17 @@
 RewriteEngine on
+
+# Static resources never accept request bodies. Reject non-safe methods and
+# force the connection closed so unread bytes cannot be interpreted as a
+# subsequent request (client-side desync/request smuggling).
+RewriteCond %{REQUEST_METHOD} !^(GET|HEAD)$ [NC]
+RewriteRule ^assets/ - [E=nokeepalive:1,E=CLOSE_STATIC_REQUEST:1]
+RewriteCond %{REQUEST_METHOD} !^(GET|HEAD)$ [NC]
+RewriteRule ^assets/ - [R=405,L]
+
+<IfModule mod_headers.c>
+    Header always set Connection "close" env=CLOSE_STATIC_REQUEST
+</IfModule>
+
 RewriteCond $1 !^(index\.php|resources|robots\.txt)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
